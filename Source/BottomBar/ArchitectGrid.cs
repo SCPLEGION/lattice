@@ -13,8 +13,8 @@ namespace Lattice;
 // filter, designator manager) is kept, so hotkeys and other mods that touch it keep working.
 public static class ArchitectGrid
 {
-	public const float CellSize = 84f;
-	public const float InfoWidth = 250f;
+	public static float CellSize => LatticeMod.Settings.cellSize;
+	public static float InfoWidth => LatticeMod.Settings.showInfoPanel ? 250f : 0f;
 	public const float StripChipMaxWidth = 140f;
 	public const float SearchWidth = 170f;
 	private const int WindowId = 32520;
@@ -22,7 +22,7 @@ public static class ArchitectGrid
 	public static Rect BlockRect = Rect.zero;
 	private static Vector2 scroll;
 
-	public static int Columns => 8;
+	public static int Columns => LatticeMod.Settings.columns;
 
 	public static Texture CategoryIcon(DesignationCategoryDef def)
 	{
@@ -39,7 +39,8 @@ public static class ArchitectGrid
 	public static void DrawPopup(ArchitectCategoryTab tab, Designator forceActivated)
 	{
 		List<Designator> designators = tab.def.ResolvedAllowedDesignators.ToList();
-		int cols = Mathf.Min(Columns, Mathf.Max(1, designators.Count));
+		int fit = Mathf.Max(1, Mathf.FloorToInt((UI.screenWidth - InfoWidth - UiStyle.Pad * 2f) / CellSize));
+		int cols = Mathf.Min(Mathf.Min(Columns, fit), Mathf.Max(1, designators.Count));
 		int rows = Mathf.CeilToInt(designators.Count / (float)cols);
 		float stripTop = UI.screenHeight - UiStyle.BarHeight - 1f - UiStyle.BarHeight;
 		float gridWidth = cols * CellSize + UiStyle.Pad * 2f;
@@ -88,6 +89,10 @@ public static class ArchitectGrid
 			}
 			Widgets.EndScrollView();
 
+			if (InfoWidth <= 0f)
+			{
+				return;
+			}
 			Designator info = hovered ?? Find.DesignatorManager.SelectedDesignator;
 			Rect infoRect = new Rect(gridWidth, 0f, InfoWidth, inner.height).ContractedBy(10f);
 			Widgets.DrawBoxSolid(new Rect(gridWidth - 1f, 8f, 1f, inner.height - 16f), new Color(1f, 1f, 1f, 0.1f));
