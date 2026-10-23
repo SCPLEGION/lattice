@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Lattice</name>
+  <author>SCPLEGION</author>
+  <packageId>scplegion.lattice</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <description>Clean icon + name UI: Cities-style popup grid for the architect menu, reworked bottom bar, colonist bar, alerts and inspect panels. Grids are built from live defs, so modded buildings and tabs show up automatically.</description>
+</ModMetaData>
