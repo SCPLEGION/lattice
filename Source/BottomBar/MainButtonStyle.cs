@@ -18,14 +18,26 @@ public static class MainButtonStyle
 		bool open = Find.MainTabsRoot.OpenTab == def;
 		bool hover = Mouse.IsOver(rect) && !disabled;
 
-		Widgets.DrawBoxSolid(rect, open ? new Color(1f, 1f, 1f, 0.12f) : hover ? UiStyle.CellHover : UiStyle.PanelBg);
-		if (open)
+		int key = UiStyle.Key(2, rect);
+		float h = UiStyle.Smooth(UiStyle.Ease(key, hover ? 1f : 0f, 9f));
+		float o = UiStyle.Smooth(UiStyle.Ease(key + 1, open ? 1f : 0f, 7f));
+
+		UiStyle.DrawGradient(rect, UiStyle.PanelTop, UiStyle.PanelBottom);
+		if (h > 0f || o > 0f)
 		{
-			Widgets.DrawBoxSolid(new Rect(rect.x, rect.y, rect.width, 2f), UiStyle.Accent);
+			UiStyle.DrawGradient(rect, new Color(1f, 1f, 1f, 0.05f + 0.1f * h + 0.05f * o), new Color(1f, 1f, 1f, 0.01f * h));
 		}
+		if (o > 0f)
+		{
+			UiStyle.DrawGlow(new Rect(rect.x - 10f, rect.y - 14f, rect.width + 20f, 40f), UiStyle.AccentGlow, o * 0.8f);
+		}
+		UiStyle.DrawAccentLine(rect, Mathf.Max(o, h * 0.5f), true, 2f);
+		UiStyle.DrawVLine(rect.xMax - 1f, rect.y + 6f, rect.height - 12f, 0.07f);
 		if (__instance.ButtonBarPercent > 0f)
 		{
-			Widgets.DrawBoxSolid(new Rect(rect.x, rect.yMax - 3f, rect.width * __instance.ButtonBarPercent, 3f), UiStyle.Accent);
+			Rect bar = new Rect(rect.x, rect.yMax - 3f, rect.width * __instance.ButtonBarPercent, 3f);
+			UiStyle.DrawGlow(bar.ExpandedBy(6f), UiStyle.AccentGlow, 0.9f);
+			Widgets.DrawBoxSolid(bar, UiStyle.Accent);
 		}
 
 		Text.Font = GameFont.Small;
@@ -39,14 +51,20 @@ public static class MainButtonStyle
 		}
 		float total = iconSpace + labelWidth;
 		float x = rect.x + (rect.width - total) / 2f;
-		GUI.color = disabled ? UiStyle.TextDim : Color.white;
+		float lift = -1f * h;
+		Color content = disabled ? UiStyle.TextDim : Color.Lerp(UiStyle.TextSoft, Color.white, Mathf.Max(h, o));
 		if (def.Icon != null)
 		{
-			GUI.DrawTexture(new Rect(x, rect.center.y - IconSize / 2f, IconSize, IconSize), def.Icon);
+			Rect iconRect = new Rect(x, rect.center.y - IconSize / 2f + lift, IconSize, IconSize);
+			GUI.color = new Color(0f, 0f, 0f, 0.4f * content.a);
+			GUI.DrawTexture(iconRect.MovedBy(new Vector2(1f, 1.5f)), def.Icon);
+			GUI.color = content;
+			GUI.DrawTexture(iconRect, def.Icon);
 			x += iconSpace;
 		}
+		GUI.color = content;
 		Text.Anchor = TextAnchor.MiddleLeft;
-		Widgets.Label(new Rect(x, rect.y, labelWidth + 4f, rect.height), label);
+		Widgets.Label(new Rect(x, rect.y + lift, labelWidth + 4f, rect.height), label);
 		Text.Anchor = TextAnchor.UpperLeft;
 		GUI.color = Color.white;
 
