@@ -13,16 +13,18 @@ namespace Lattice;
 // filter, designator manager) is kept, so hotkeys and other mods that touch it keep working.
 public static class ArchitectGrid
 {
-	public static float CellSize => LatticeMod.Settings.cellSize;
-	public static float InfoWidth => LatticeMod.Settings.showInfoPanel ? 250f : 0f;
+	public const float CellSize = UiStyle.CellSize;
+	public const float InfoWidth = UiStyle.InfoWidth;
 	public const float StripChipMaxWidth = 140f;
 	public const float SearchWidth = 170f;
 	private const int WindowId = 32520;
 
 	public static Rect BlockRect = Rect.zero;
 	private static Vector2 scroll;
+	private static ArchitectCategoryTab lastTab;
+	private const int FadeKey = 0x1A771CE;
 
-	public static int Columns => LatticeMod.Settings.columns;
+	public static int Columns => 8;
 
 	public static Texture CategoryIcon(DesignationCategoryDef def)
 	{
@@ -39,15 +41,21 @@ public static class ArchitectGrid
 	public static void DrawPopup(ArchitectCategoryTab tab, Designator forceActivated)
 	{
 		List<Designator> designators = tab.def.ResolvedAllowedDesignators.ToList();
-		int fit = Mathf.Max(1, Mathf.FloorToInt((UI.screenWidth - InfoWidth - UiStyle.Pad * 2f) / CellSize));
-		int cols = Mathf.Min(Mathf.Min(Columns, fit), Mathf.Max(1, designators.Count));
+		int cols = Mathf.Min(Columns, Mathf.Max(1, designators.Count));
 		int rows = Mathf.CeilToInt(designators.Count / (float)cols);
 		float stripTop = UI.screenHeight - UiStyle.BarHeight - 1f - UiStyle.BarHeight;
 		float gridWidth = cols * CellSize + UiStyle.Pad * 2f;
 		float height = Mathf.Min(rows * CellSize + UiStyle.Pad * 2f, stripTop - 40f);
 		height = Mathf.Max(height, 220f);
-		Rect popup = new Rect(0f, stripTop - height, gridWidth + InfoWidth, height);
+		Rect popup = new Rect(0f, stripTop - height - 6f, gridWidth + InfoWidth, height);
 		BlockRect = popup;
+		if (lastTab != tab)
+		{
+			lastTab = tab;
+			UiStyle.Reset(FadeKey);
+		}
+		float fade = UiStyle.Smooth(UiStyle.Ease(FadeKey, 1f, 7f));
+		popup.y += (1f - fade) * 14f;
 
 		Designator selected = Find.DesignatorManager.SelectedDesignator;
 		selected?.DoExtraGuiControls(0f, popup.y);
@@ -56,7 +64,7 @@ public static class ArchitectGrid
 		Find.WindowStack.ImmediateWindow(WindowId, popup, WindowLayer.GameUI, () =>
 		{
 			Rect inner = popup.AtZero();
-			Widgets.DrawBoxSolid(inner, UiStyle.PanelBg);
+			UiStyle.DrawPanel(inner, fade, false);
 			Rect gridRect = new Rect(0f, 0f, gridWidth, inner.height);
 			Rect view = new Rect(0f, 0f, gridWidth - UiStyle.Pad * 2f - 16f, rows * CellSize);
 			bool needScroll = view.height > gridRect.height - UiStyle.Pad * 2f;
@@ -89,13 +97,10 @@ public static class ArchitectGrid
 			}
 			Widgets.EndScrollView();
 
-			if (InfoWidth <= 0f)
-			{
-				return;
-			}
 			Designator info = hovered ?? Find.DesignatorManager.SelectedDesignator;
 			Rect infoRect = new Rect(gridWidth, 0f, InfoWidth, inner.height).ContractedBy(10f);
-			Widgets.DrawBoxSolid(new Rect(gridWidth - 1f, 8f, 1f, inner.height - 16f), new Color(1f, 1f, 1f, 0.1f));
+			UiStyle.DrawGradient(new Rect(gridWidth, 0f, InfoWidth, inner.height), new Color(1f, 1f, 1f, 0.035f), new Color(0f, 0f, 0f, 0.18f));
+			UiStyle.DrawVLine(gridWidth - 1f, 8f, inner.height - 16f, UiStyle.DividerAlpha);
 			if (info != null)
 			{
 				DrawInfo(infoRect, info);
@@ -119,10 +124,12 @@ public static class ArchitectGrid
 		Rect title = new Rect(0f, 0f, rect.width - d.PanelReadoutTitleExtraRightMargin, 32f);
 		Widgets.Label(title, d.LabelCap);
 		Text.Font = GameFont.Small;
-		float y = 34f;
+		Widgets.DrawBoxSolid(new Rect(0f, 34f, 36f, 2f), UiStyle.Accent);
+		Widgets.DrawBoxSolid(new Rect(36f, 34f, rect.width - 36f, 1f), UiStyle.Hairline);
+		float y = 42f;
 		d.DrawPanelReadout(ref y, rect.width);
 		Rect desc = new Rect(0f, y + 4f, rect.width, rect.height - y - 4f);
-		GUI.color = new Color(1f, 1f, 1f, 0.8f);
+		GUI.color = new Color(UiStyle.TextSoft.r, UiStyle.TextSoft.g, UiStyle.TextSoft.b, UiStyle.DescAlpha);
 		Widgets.Label(desc, d.Desc.TruncateHeight(desc.width, desc.height));
 		GUI.color = Color.white;
 		GUI.EndGroup();
@@ -193,7 +200,8 @@ public static class Patch_DoWindowContents
 			}
 		}
 
-		Widgets.DrawBoxSolid(inRect, UiStyle.PanelBg);
+		UiStyle.DrawShadow(inRect, 8f, 0.6f);
+		UiStyle.DrawPanel(inRect, 1f, false);
 		float chipW = Mathf.Min(ArchitectGrid.StripChipMaxWidth, (inRect.width - ArchitectGrid.SearchWidth - 8f) / Mathf.Max(1, panels.Count));
 		// Vanilla order is reversed (descending); draw in on-screen order left to right.
 		for (int i = 0; i < panels.Count; i++)
@@ -202,14 +210,23 @@ public static class Patch_DoWindowContents
 			Rect chip = new Rect(i * chipW, 0f, chipW, inRect.height);
 			bool visible = panel.Visible;
 			bool isOpen = open == panel;
-			Widgets.DrawBoxSolid(chip, isOpen ? new Color(1f, 1f, 1f, 0.14f) : Mouse.IsOver(chip) && visible ? UiStyle.CellHover : Color.clear);
-			if (isOpen)
+			int key = UiStyle.Key(4, chip);
+			float h = UiStyle.Smooth(UiStyle.Ease(key, Mouse.IsOver(chip) && visible ? 1f : 0f, 9f));
+			float o = UiStyle.Smooth(UiStyle.Ease(key + 1, isOpen ? 1f : 0f, 7f));
+			if (h > 0f || o > 0f)
 			{
-				Widgets.DrawBoxSolid(new Rect(chip.x, chip.y, chip.width, 2f), UiStyle.Accent);
+				UiStyle.DrawGradient(chip, new Color(1f, 1f, 1f, 0.05f + 0.1f * h + 0.07f * o), new Color(1f, 1f, 1f, 0.01f));
 			}
+			if (o > 0f)
+			{
+				UiStyle.DrawGlow(new Rect(chip.x - 10f, chip.y - 14f, chip.width + 20f, 40f), UiStyle.AccentGlow, o * 0.8f);
+			}
+			UiStyle.DrawAccentLine(chip, Mathf.Max(o, h * 0.5f), true, 2f);
+			UiStyle.DrawVLine(chip.xMax - 1f, chip.y + 8f, chip.height - 16f, 0.06f);
 			Texture icon = ArchitectGrid.CategoryIcon(panel.def);
 			float iconSpace = icon != null ? 24f : 0f;
-			GUI.color = visible && panel.AnySearchMatches ? Color.white : UiStyle.TextDim;
+			bool lit = visible && panel.AnySearchMatches;
+			GUI.color = lit ? Color.Lerp(UiStyle.TextSoft, Color.white, Mathf.Max(h, o)) : UiStyle.TextDim;
 			if (icon != null)
 			{
 				GUI.DrawTexture(new Rect(chip.x + 6f, chip.center.y - 10f, 20f, 20f), icon);
@@ -230,6 +247,8 @@ public static class Patch_DoWindowContents
 			}
 		}
 		Rect searchRect = new Rect(inRect.xMax - ArchitectGrid.SearchWidth - 4f, 6f, ArchitectGrid.SearchWidth, 24f);
+		Widgets.DrawBoxSolid(searchRect.ExpandedBy(2f), new Color(0f, 0f, 0f, 0.35f));
+		Widgets.DrawBoxSolid(new Rect(searchRect.x - 2f, searchRect.yMax + 1f, searchRect.width + 4f, 1f), UiStyle.Hairline);
 		search.OnGUI(searchRect, () => CacheSearchState.Invoke(__instance, null));
 		return false;
 	}

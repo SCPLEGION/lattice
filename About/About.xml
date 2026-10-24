@@ -6,5 +6,5 @@
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Clean icon + name UI: Cities-style popup grid for the architect menu, reworked bottom bar, restyled colonist bar, alerts and inspect pane, with in-game settings. Grids are built from live defs, so modded buildings and tabs show up automatically.</description>
+  <description>Clean, cinematic icon + name UI: Cities-style popup grid for the architect menu and a reworked bottom bar, with glow accents and smooth animations. Grids are built from live defs, so modded buildings and tabs show up automatically.</description>
 </ModMetaData>
