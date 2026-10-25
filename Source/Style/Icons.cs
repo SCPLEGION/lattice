@@ -33,13 +33,33 @@ public static class Icons
 		{
 			return cached;
 		}
+		// Every category starts with Cancel/Remove-style designators; prefer something buildable so the
+		// tab shows what the category is about.
 		Texture found = null;
 		foreach (Designator d in def.ResolvedAllowedDesignators)
 		{
-			found = For(d);
-			if (found != null)
+			if (d is Designator_Build)
 			{
-				break;
+				found = For(d);
+				if (found != null)
+				{
+					break;
+				}
+			}
+		}
+		if (found == null)
+		{
+			foreach (Designator d in def.ResolvedAllowedDesignators)
+			{
+				if (d is Designator_Cancel)
+				{
+					continue;
+				}
+				found = For(d);
+				if (found != null)
+				{
+					break;
+				}
 			}
 		}
 		if (found != null)
