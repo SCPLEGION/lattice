@@ -11,6 +11,7 @@ namespace Lattice;
 public static class Icons
 {
 	private static readonly System.Reflection.MethodInfo UpdateIcon = AccessTools.Method(typeof(Designator_Build), "UpdateIcon");
+	private static readonly HashSet<DesignationCategoryDef> Warned = new HashSet<DesignationCategoryDef>();
 	private static readonly Dictionary<DesignationCategoryDef, Texture> CategoryCache = new Dictionary<DesignationCategoryDef, Texture>();
 
 	public static Texture For(Designator d)
@@ -44,6 +45,11 @@ public static class Icons
 		if (found != null)
 		{
 			CategoryCache[def] = found;
+		}
+		else if (Warned.Add(def))
+		{
+			Log.Warning($"[Lattice] No icon for architect category {def.defName}: " + string.Join(", ", System.Linq.Enumerable.Select(def.ResolvedAllowedDesignators,
+				d => $"{d.GetType().Name}(icon={(d.icon != null)})")));
 		}
 		return found;
 	}
