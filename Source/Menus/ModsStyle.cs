@@ -45,14 +45,14 @@ public static class Patch_ModInfo
 [HarmonyPatch(typeof(Widgets), nameof(Widgets.DrawHighlightSelected))]
 public static class Patch_HighlightSelected
 {
-	public static bool Prefix(Rect r)
+	public static bool Prefix(Rect rect)
 	{
 		if (!LatticeMod.Settings.restyleWidgets)
 		{
 			return true;
 		}
-		UiStyle.DrawGradient(r, UiStyle.WithAlpha(UiStyle.Accent, 0.22f), UiStyle.WithAlpha(UiStyle.Accent, 0.06f));
-		Widgets.DrawBoxSolid(new Rect(r.x, r.y, 3f, r.height), UiStyle.Accent);
+		UiStyle.DrawGradient(rect, UiStyle.WithAlpha(UiStyle.Accent, 0.22f), UiStyle.WithAlpha(UiStyle.Accent, 0.06f));
+		Widgets.DrawBoxSolid(new Rect(rect.x, rect.y, 3f, rect.height), UiStyle.Accent);
 		return false;
 	}
 }
@@ -60,16 +60,16 @@ public static class Patch_HighlightSelected
 [HarmonyPatch(typeof(Widgets), nameof(Widgets.DrawHighlightIfMouseover))]
 public static class Patch_HighlightMouseover
 {
-	public static bool Prefix(Rect r)
+	public static bool Prefix(Rect rect)
 	{
 		if (!LatticeMod.Settings.restyleWidgets)
 		{
 			return true;
 		}
-		if (Mouse.IsOver(r))
+		if (Mouse.IsOver(rect))
 		{
-			Widgets.DrawBoxSolid(r, UiStyle.CellHover);
-			Widgets.DrawBoxSolid(new Rect(r.x, r.y, 2f, r.height), UiStyle.WithAlpha(UiStyle.Accent, 0.7f));
+			Widgets.DrawBoxSolid(rect, UiStyle.CellHover);
+			Widgets.DrawBoxSolid(new Rect(rect.x, rect.y, 2f, rect.height), UiStyle.WithAlpha(UiStyle.Accent, 0.7f));
 		}
 		return false;
 	}
