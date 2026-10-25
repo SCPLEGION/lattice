@@ -261,3 +261,11 @@ public static class Patch_DoWindowContents
 
 	private static Vector2 catScrollRef;
 }
+
+// Vanilla draws the open category's gizmo row and its info box (over InfoRect, which is our whole window)
+// from ExtraOnGUI. The window draws all of that itself, so the vanilla pass is skipped.
+[HarmonyPatch(typeof(ArchitectCategoryTab), nameof(ArchitectCategoryTab.DesignationTabOnGUI))]
+public static class Patch_DesignationTabOnGUI
+{
+	public static bool Prefix() => false;
+}
