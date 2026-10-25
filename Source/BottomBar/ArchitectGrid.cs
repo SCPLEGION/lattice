@@ -26,17 +26,7 @@ public static class ArchitectGrid
 
 	public static int Columns => 8;
 
-	public static Texture CategoryIcon(DesignationCategoryDef def)
-	{
-		foreach (Designator d in def.ResolvedAllowedDesignators)
-		{
-			if (d.icon != null)
-			{
-				return d.icon;
-			}
-		}
-		return null;
-	}
+	public static Texture CategoryIcon(DesignationCategoryDef def) => Icons.For(def);
 
 	public static void DrawPopup(ArchitectCategoryTab tab, Designator forceActivated)
 	{
@@ -79,8 +69,8 @@ public static class ArchitectGrid
 				Designator d = designators[i];
 				Rect cell = new Rect(i % cols * CellSize, i / cols * CellSize, CellSize - 4f, CellSize - 4f);
 				bool dim = !MatchesSearch(d);
-				bool clicked = UiStyle.IconCell(cell, d.icon, d.LabelCap, selected == d, d.Disabled, dim,
-					d.iconDrawScale, d.iconProportions, d.iconTexCoords, d.iconAngle, d.defaultIconColor);
+				bool clicked = UiStyle.IconCell(cell, Icons.For(d), d.LabelCap, selected == d, d.Disabled, dim,
+					d.iconDrawScale, d.iconProportions, d.iconTexCoords, d.iconAngle, d.IconDrawColor);
 				if (Mouse.IsOver(cell))
 				{
 					hovered = d;
