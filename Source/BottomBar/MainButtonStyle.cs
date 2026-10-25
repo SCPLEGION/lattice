@@ -43,8 +43,15 @@ public static class MainButtonStyle
 		Text.Font = GameFont.Small;
 		string label = def.LabelCap;
 		float labelWidth = def.LabelCapWidth;
+		bool iconOnly = LatticeMod.Settings.dock && def.Icon != null;
 		float iconSpace = def.Icon != null ? IconSize + 6f : 0f;
-		if (labelWidth + iconSpace > rect.width - 8f)
+		if (iconOnly)
+		{
+			label = "";
+			labelWidth = 0f;
+			iconSpace = IconSize;
+		}
+		else if (labelWidth + iconSpace > rect.width - 8f)
 		{
 			label = def.ShortenedLabelCap;
 			labelWidth = def.ShortenedLabelCapWidth;
@@ -84,9 +91,10 @@ public static class MainButtonStyle
 		{
 			UIHighlighter.HighlightOpportunity(rect, def.cachedHighlightTagClosed);
 		}
-		if (Mouse.IsOver(rect) && !def.description.NullOrEmpty())
+		if (Mouse.IsOver(rect) && (!def.description.NullOrEmpty() || iconOnly))
 		{
-			TooltipHandler.TipRegion(rect, def.LabelCap.Colorize(ColorLibrary.Yellow) + "\n\n" + def.description);
+			string keyHint = def.hotKey != null ? $" ({def.hotKey.MainKeyLabel})" : "";
+			TooltipHandler.TipRegion(rect, (def.LabelCap + keyHint).Colorize(ColorLibrary.Yellow) + "\n\n" + def.description);
 		}
 		return false;
 	}
