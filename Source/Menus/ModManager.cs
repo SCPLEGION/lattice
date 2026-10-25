@@ -318,11 +318,6 @@ public static class ModManager
 			Dirty(page) = true;
 			Refresh(true);
 		}
-		x -= 150f;
-		if (Widgets.ButtonText(new Rect(x, rect.y + 6f, 144f, 32f), "Load order view"))
-		{
-			ListMode = true;
-		}
 	}
 }
 
@@ -338,18 +333,6 @@ public static class Patch_ModsPageContents
 		ModManager.Draw(__instance, rect);
 		return false;
 	}
-
-	public static void Postfix(Rect rect)
-	{
-		if (!LatticeMod.Settings.restyleWidgets || !ModManager.ListMode || !ModManager.Ready)
-		{
-			return;
-		}
-		if (Widgets.ButtonText(new Rect(rect.x + 514f, rect.y, 160f, 30f), "Card view"))
-		{
-			ModManager.ListMode = false;
-		}
-	}
 }
 
 // The mods page opens bigger so the card grid has room.
@@ -363,4 +346,47 @@ public static class Patch_ModsPageSize
 			__result = new Vector2(Mathf.Min(UI.screenWidth - 80f, 1700f), Mathf.Min(UI.screenHeight - 60f, 960f));
 		}
 	}
+}
+
+// View switch in the top-right corner of the page. Clicked in the Prefix (before the page draws), so no
+// vanilla control can swallow it; drawn in the Postfix, on top.
+[HarmonyPatch(typeof(Window), "InnerWindowOnGUI")]
+public static class Patch_ModsViewSwitch
+{
+	private static Rect Chip(Window w) => new Rect(w.windowRect.width - 198f, 8f, 180f, 28f);
+
+	public static void Prefix(Window __instance)
+	{
+		if (!(__instance is Page_ModsConfig) || !LatticeMod.Settings.restyleWidgets || !ModManager.Ready)
+		{
+			return;
+		}
+		Event e = Event.current;
+		if (e.type == EventType.MouseDown && e.button == 0 && Chip(__instance).Contains(e.mousePosition))
+		{
+			ModManager.ListMode = !ModManager.ListMode;
+			e.Use();
+		}
+	}
+
+	public static void Postfix(Window __instance)
+	{
+		if (!(__instance is Page_ModsConfig) || !LatticeMod.Settings.restyleWidgets || !ModManager.Ready || Event.current.type != EventType.Repaint)
+		{
+			return;
+		}
+		Rect chip = Chip(__instance);
+		bool hover = Mouse.IsOver(chip);
+		UiStyle.DrawGradient(chip, UiStyle.WithAlpha(UiStyle.PanelTop, 0.95f), UiStyle.WithAlpha(UiStyle.PanelBottom, 0.95f));
+		Widgets.DrawBoxSolid(new Rect(chip.x, chip.yMax - 2f, chip.width * (hover ? 1f : 0.35f), 2f), UiStyle.Accent);
+		Text.Anchor = TextAnchor.MiddleCenter;
+		Widgets.Label(chip, ModManager.ListMode ? "Card view" : "Load order view");
+		Text.Anchor = TextAnchor.UpperLeft;
+	}
+}
+
+[HarmonyPatch(typeof(Page_ModsConfig), nameof(Page_ModsConfig.PreOpen))]
+public static class Patch_ModsPageOpen
+{
+	public static void Postfix() => ModManager.ListMode = false;
 }

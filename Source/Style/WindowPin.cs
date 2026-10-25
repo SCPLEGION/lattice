@@ -21,9 +21,18 @@ public static class WindowPins
 
 	public static bool IsPinned(Window w) => Pinned.ContainsKey(w);
 
+	// Pin only where keeping a window open is useful: the main tab windows and a few dialogs
+	// (info cards, bill config, policy/area managers). Debug/log/edit windows and everything else are left alone.
+	private static readonly HashSet<string> PinnableDialogs = new HashSet<string>
+	{
+		"Dialog_InfoCard", "Dialog_BillConfig", "Dialog_MechBillConfig", "Dialog_ManageAreas",
+		"Dialog_ManageApparelPolicies", "Dialog_ManageDrugPolicies", "Dialog_ManageFoodPolicies",
+		"Dialog_ManageReadingPolicies", "Dialog_MedicalDefaults", "Dialog_Ideo",
+	};
+
 	public static bool Eligible(Window w) =>
 		LatticeMod.Settings.pinWindows && w != null && w.doWindowBackground
-		&& !(w is Page) && !(w is FloatMenu) && !(w is MainTabWindow_Inspect) && !w.GetType().Name.Contains("Immediate");
+		&& ((w is MainTabWindow && !(w is MainTabWindow_Inspect)) || PinnableDialogs.Contains(w.GetType().Name));
 
 	public static Rect ChipRect(Window w) => new Rect(w.windowRect.width - 50f - (w.doCloseX ? 30f : 0f), 2f, 46f, 16f);
 
