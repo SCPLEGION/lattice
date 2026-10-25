@@ -12,6 +12,8 @@ public class LatticeSettings : ModSettings
 	public bool showInfoPanel = true;
 	public bool dock = true;
 	public bool restyleWidgets = true;
+	public bool movableWindows = true;
+	public bool centerWindows = true;
 	public BackdropMode backdropMode = BackdropMode.Latest;
 	public string backdropCustom = "";
 
@@ -22,6 +24,8 @@ public class LatticeSettings : ModSettings
 		Scribe_Values.Look(ref showInfoPanel, "showInfoPanel", true);
 		Scribe_Values.Look(ref dock, "dock", true);
 		Scribe_Values.Look(ref restyleWidgets, "restyleWidgets", true);
+		Scribe_Values.Look(ref movableWindows, "movableWindows", true);
+		Scribe_Values.Look(ref centerWindows, "centerWindows", true);
 		Scribe_Values.Look(ref backdropMode, "backdropMode", BackdropMode.Latest);
 		Scribe_Values.Look(ref backdropCustom, "backdropCustom", "");
 	}
@@ -37,6 +41,8 @@ public class LatticeSettings : ModSettings
 		list.CheckboxLabeled("Show info panel next to the architect grid", ref showInfoPanel);
 		list.CheckboxLabeled("Centered icon dock instead of the full-width bottom bar", ref dock);
 		list.CheckboxLabeled("Restyle vanilla buttons, windows, tabs and lists everywhere (turn off if another UI mod conflicts)", ref restyleWidgets);
+		list.CheckboxLabeled("Windows can be dragged anywhere", ref movableWindows);
+		list.CheckboxLabeled("Open tab windows (work, research...) in the center", ref centerWindows);
 		list.GapLine();
 		list.Label("Main menu background");
 		if (list.ButtonText($"Mode: {backdropMode}"))
@@ -73,6 +79,8 @@ public class LatticeSettings : ModSettings
 			showInfoPanel = true;
 			dock = true;
 			restyleWidgets = true;
+			movableWindows = true;
+			centerWindows = true;
 			backdropMode = BackdropMode.Latest;
 			backdropCustom = "";
 		}
