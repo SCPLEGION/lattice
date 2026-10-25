@@ -32,7 +32,6 @@ public static class LatticeApi
 		}
 		if (!list.Contains(designator))
 		{
-			designator.settingsCategoryDef ??= category;
 			list.Add(designator);
 		}
 	}
