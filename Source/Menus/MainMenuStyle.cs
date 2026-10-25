@@ -10,26 +10,35 @@ namespace Lattice;
 [HarmonyPatch(typeof(UI_BackgroundMain), "DoOverlay")]
 public static class Patch_MenuOverlay
 {
-	private const int Strips = 48;
+	private static Texture2D fadeTex;
 
-	public static void Postfix(Rect bgRect)
+	// 1px-high horizontal alpha ramp (opaque -> clear), stretched over the shaded area: no seams.
+	private static Texture2D FadeTex
 	{
-		float bar = bgRect.height * 0.09f;
-		Color black = new Color(0f, 0f, 0f, 0.92f);
-		UiStyle.DrawGradient(new Rect(bgRect.x, bgRect.y, bgRect.width, bar * 2.2f), black, new Color(0f, 0f, 0f, 0f));
-		UiStyle.DrawGradient(new Rect(bgRect.x, bgRect.yMax - bar * 2.6f, bgRect.width, bar * 2.6f), new Color(0f, 0f, 0f, 0f), black);
-
-		float width = bgRect.width * 0.55f;
-		float step = width / Strips;
-		for (int i = 0; i < Strips; i++)
+		get
 		{
-			float t = 1f - i / (float)Strips;
-			Widgets.DrawBoxSolid(new Rect(bgRect.x + i * step, bgRect.y, step + 1f, bgRect.height), new Color(0.02f, 0.025f, 0.04f, 0.78f * t * t));
+			if (fadeTex == null)
+			{
+				const int w = 128;
+				fadeTex = new Texture2D(w, 1, TextureFormat.RGBA32, false) { wrapMode = TextureWrapMode.Clamp };
+				for (int i = 0; i < w; i++)
+				{
+					float t = 1f - i / (float)(w - 1);
+					fadeTex.SetPixel(i, 0, new Color(0.02f, 0.025f, 0.04f, 0.78f * t * t));
+				}
+				fadeTex.Apply();
+			}
+			return fadeTex;
 		}
+	}
 
-		Rect glow = new Rect(bgRect.x, bgRect.yMax - bar * 1.6f, bgRect.width, bar * 1.6f);
-		UiStyle.DrawGlow(glow, UiStyle.AccentGlow, 0.22f + 0.1f * UiStyle.Pulse(0.8f));
-		Widgets.DrawBoxSolid(new Rect(bgRect.x, bgRect.yMax - bar * 0.9f, bgRect.width, 1f), UiStyle.WithAlpha(UiStyle.Accent, 0.5f));
+	public static void Postfix()
+	{
+		// The background rect extends past the visible artwork, so shade the screen, not bgRect.
+		Rect screen = new Rect(0f, 0f, UI.screenWidth, UI.screenHeight);
+		GUI.DrawTexture(new Rect(0f, 0f, screen.width * 0.5f, screen.height), FadeTex);
+		float top = screen.height * 0.12f;
+		UiStyle.DrawGradient(new Rect(0f, 0f, screen.width, top), new Color(0f, 0f, 0f, 0.7f), new Color(0f, 0f, 0f, 0f));
 	}
 }
 
