@@ -44,6 +44,10 @@ public static class Patch_ButtonText
 {
 	public static bool Prefix(Rect rect, string label, bool drawBackground, bool doMouseoverSound, bool active, TextAnchor? overrideTextAnchor, ref bool __result)
 	{
+		if (!LatticeMod.Settings.restyleWidgets)
+		{
+			return true;
+		}
 		__result = ButtonStyle.Draw(rect, label, drawBackground, doMouseoverSound, Color.white, active, overrideTextAnchor);
 		return false;
 	}
@@ -54,6 +58,10 @@ public static class Patch_ButtonTextColored
 {
 	public static bool Prefix(Rect rect, string label, bool drawBackground, bool doMouseoverSound, Color textColor, bool active, TextAnchor? overrideTextAnchor, ref bool __result)
 	{
+		if (!LatticeMod.Settings.restyleWidgets)
+		{
+			return true;
+		}
 		__result = ButtonStyle.Draw(rect, label, drawBackground, doMouseoverSound, textColor, active, overrideTextAnchor);
 		return false;
 	}

@@ -11,6 +11,7 @@ public class LatticeSettings : ModSettings
 	public float cellSize = 84f;
 	public bool showInfoPanel = true;
 	public bool dock = true;
+	public bool restyleWidgets = true;
 	public BackdropMode backdropMode = BackdropMode.Latest;
 	public string backdropCustom = "";
 
@@ -20,6 +21,7 @@ public class LatticeSettings : ModSettings
 		Scribe_Values.Look(ref cellSize, "cellSize", 84f);
 		Scribe_Values.Look(ref showInfoPanel, "showInfoPanel", true);
 		Scribe_Values.Look(ref dock, "dock", true);
+		Scribe_Values.Look(ref restyleWidgets, "restyleWidgets", true);
 		Scribe_Values.Look(ref backdropMode, "backdropMode", BackdropMode.Latest);
 		Scribe_Values.Look(ref backdropCustom, "backdropCustom", "");
 	}
@@ -34,6 +36,7 @@ public class LatticeSettings : ModSettings
 		cellSize = Mathf.Round(list.Slider(cellSize, 64f, 110f));
 		list.CheckboxLabeled("Show info panel next to the architect grid", ref showInfoPanel);
 		list.CheckboxLabeled("Centered icon dock instead of the full-width bottom bar", ref dock);
+		list.CheckboxLabeled("Restyle vanilla buttons, windows, tabs and lists everywhere (turn off if another UI mod conflicts)", ref restyleWidgets);
 		list.GapLine();
 		list.Label("Main menu background");
 		if (list.ButtonText($"Mode: {backdropMode}"))
@@ -69,6 +72,7 @@ public class LatticeSettings : ModSettings
 			cellSize = 84f;
 			showInfoPanel = true;
 			dock = true;
+			restyleWidgets = true;
 			backdropMode = BackdropMode.Latest;
 			backdropCustom = "";
 		}

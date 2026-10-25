@@ -11,6 +11,10 @@ public static class Patch_DrawWindowBackground
 {
 	public static bool Prefix(Rect rect)
 	{
+		if (!LatticeMod.Settings.restyleWidgets)
+		{
+			return true;
+		}
 		UiStyle.DrawPanel(rect);
 		return false;
 	}
@@ -21,6 +25,10 @@ public static class Patch_DrawWindowBackgroundTinted
 {
 	public static bool Prefix(Rect rect, Color colorFactor)
 	{
+		if (!LatticeMod.Settings.restyleWidgets)
+		{
+			return true;
+		}
 		UiStyle.DrawPanel(rect);
 		UiStyle.DrawGradient(rect, UiStyle.WithAlpha(colorFactor, 0.08f), UiStyle.WithAlpha(colorFactor, 0f));
 		return false;
@@ -32,6 +40,10 @@ public static class Patch_DrawMenuSection
 {
 	public static bool Prefix(Rect rect)
 	{
+		if (!LatticeMod.Settings.restyleWidgets)
+		{
+			return true;
+		}
 		UiStyle.DrawGradient(rect, UiStyle.WithAlpha(UiStyle.PanelTop, 0.7f), UiStyle.WithAlpha(UiStyle.PanelBottom, 0.7f));
 		Widgets.DrawBoxSolid(new Rect(rect.x, rect.y, rect.width, 1f), UiStyle.Hairline);
 		Widgets.DrawBoxSolid(new Rect(rect.x, rect.yMax - 1f, rect.width, 1f), UiStyle.Hairline);

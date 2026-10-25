@@ -6,5 +6,5 @@
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Clean, cinematic icon + name UI: Cities-style popup grid for the architect menu and a reworked bottom bar, with glow accents and smooth animations. Grids are built from live defs, so modded buildings and tabs show up automatically.</description>
+  <description>One dark, glassy style with a gold accent: centered icon dock, floating architect window, cinematic main menu with your colony as the background, one-click bills tab, and restyled buttons, windows, tabs, mods screen, colonist bar, alerts and inspect pane. Grids are built from live defs, so modded content shows up automatically.</description>
 </ModMetaData>
