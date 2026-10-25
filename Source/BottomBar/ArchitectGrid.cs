@@ -46,6 +46,7 @@ public static class ArchitectGrid
 		{
 			designators.AddRange(extras);
 		}
+		designators.RemoveAll(LatticeApi.IsHidden);
 		int cols = Mathf.Min(Columns, Mathf.Max(1, designators.Count));
 		int rows = Mathf.CeilToInt(designators.Count / (float)cols);
 		float stripTop = UI.screenHeight - UiStyle.BarHeight - 1f - UiStyle.BarHeight;

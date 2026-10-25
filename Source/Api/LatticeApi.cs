@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -13,6 +14,9 @@ public static class LatticeApi
 {
 	private static readonly Dictionary<DesignationCategoryDef, List<Designator>> architectExtras = new();
 	private static readonly Dictionary<MainButtonDef, Action> barCallbacks = new();
+	private static readonly Dictionary<MainButtonDef, Func<string>> barBadges = new();
+	private static readonly Dictionary<MainButtonDef, Func<bool>> barVisibility = new();
+	private static readonly List<Predicate<Designator>> architectHidden = new();
 
 	// Adds a designator to a category's popup grid, in addition to the def's allowedDesignatorClasses.
 	// Appears for vanilla and modded categories alike. Duplicates are ignored.
@@ -65,6 +69,84 @@ public static class LatticeApi
 		return def;
 	}
 
+	// Hides every designator the predicate matches from the architect popups (vanilla and modded).
+	public static void HideArchitectEntries(Predicate<Designator> hide)
+	{
+		if (hide == null)
+		{
+			throw new ArgumentNullException(nameof(hide));
+		}
+		architectHidden.Add(hide);
+	}
+
+	// Hides a designator that places/builds the given def (buildings, terrain, etc.).
+	public static void HideArchitectBuildable(BuildableDef buildable)
+	{
+		if (buildable == null)
+		{
+			throw new ArgumentNullException(nameof(buildable));
+		}
+		HideArchitectEntries(d => d is Designator_Build build && build.PlacingDef == buildable);
+	}
+
+	// Shows a small pill on a bottom-bar button (any button, vanilla included). The function is
+	// polled every frame; return null or empty to show nothing, e.g. a count like "3".
+	public static void SetBarButtonBadge(MainButtonDef def, Func<string> badge)
+	{
+		if (def == null)
+		{
+			throw new ArgumentNullException(nameof(def));
+		}
+		if (badge == null)
+		{
+			barBadges.Remove(def);
+		}
+		else
+		{
+			barBadges[def] = badge;
+		}
+	}
+
+	// Hides a bottom-bar button while the function returns false (any button, vanilla included).
+	// Only takes effect on buttons whose worker does not override Visible itself.
+	public static void SetBarButtonVisible(MainButtonDef def, Func<bool> visible)
+	{
+		if (def == null)
+		{
+			throw new ArgumentNullException(nameof(def));
+		}
+		if (visible == null)
+		{
+			barVisibility.Remove(def);
+		}
+		else
+		{
+			barVisibility[def] = visible;
+		}
+	}
+
+	internal static bool IsHidden(Designator d)
+	{
+		foreach (Predicate<Designator> hide in architectHidden)
+		{
+			if (hide(d))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	internal static string BadgeFor(MainButtonDef def)
+	{
+		return barBadges.TryGetValue(def, out Func<string> badge) ? badge() : null;
+	}
+
+	internal static bool VisibleFor(MainButtonDef def)
+	{
+		return !barVisibility.TryGetValue(def, out Func<bool> visible) || visible();
+	}
+
 	internal static IEnumerable<Designator> ExtraDesignators(DesignationCategoryDef category)
 	{
 		return architectExtras.TryGetValue(category, out List<Designator> list) ? list : null;
@@ -82,4 +164,16 @@ public static class LatticeApi
 public class CallbackButtonWorker : MainButtonWorker
 {
 	public override void Activate() => LatticeApi.Invoke(def);
+}
+
+[HarmonyPatch(typeof(MainButtonWorker), nameof(MainButtonWorker.Visible), MethodType.Getter)]
+public static class Patch_ButtonVisible
+{
+	public static void Postfix(MainButtonWorker __instance, ref bool __result)
+	{
+		if (__result)
+		{
+			__result = LatticeApi.VisibleFor(__instance.def);
+		}
+	}
 }

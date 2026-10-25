@@ -18,6 +18,16 @@ LatticeApi.AddArchitectEntry(DesignationCategoryDefOf.Structure, new MyDesignato
 // Extra bottom-bar button; call during mod load, before the bar is built
 LatticeApi.AddBarButton("MyMod_Button", "My button", () => Find.WindowStack.Add(new MyWindow()),
     iconPath: "UI/MyIcon", description: "Opens my window", order: 1000);
+
+// Badge pill on any bottom-bar button (polled each frame; null/empty hides it)
+LatticeApi.SetBarButtonBadge(MainButtonDefOf.Architect, () => pending > 0 ? pending.ToString() : null);
+
+// Show a bottom-bar button only under a condition
+LatticeApi.SetBarButtonVisible(myButtonDef, () => Find.CurrentMap != null);
+
+// Hide architect entries
+LatticeApi.HideArchitectBuildable(ThingDefOf.Wall);
+LatticeApi.HideArchitectEntries(d => d is Designator_Dropdown);
 ```
 
 ## Build

@@ -67,6 +67,7 @@ public static class MainButtonStyle
 		Widgets.Label(new Rect(x, rect.y + lift, labelWidth + 4f, rect.height), label);
 		Text.Anchor = TextAnchor.UpperLeft;
 		GUI.color = Color.white;
+		DrawBadge(rect, LatticeApi.BadgeFor(def));
 
 		if (disabled)
 		{
@@ -89,5 +90,24 @@ public static class MainButtonStyle
 			TooltipHandler.TipRegion(rect, def.LabelCap.Colorize(ColorLibrary.Yellow) + "\n\n" + def.description);
 		}
 		return false;
+	}
+
+	private static void DrawBadge(Rect rect, string text)
+	{
+		if (text.NullOrEmpty())
+		{
+			return;
+		}
+		Text.Font = GameFont.Tiny;
+		float w = Mathf.Max(16f, Text.CalcSize(text).x + 8f);
+		Rect pill = new Rect(rect.xMax - w - 4f, rect.y + 4f, w, 14f);
+		UiStyle.DrawGlow(pill.ExpandedBy(4f), UiStyle.AccentGlow, 0.6f);
+		Widgets.DrawBoxSolid(pill, UiStyle.Accent);
+		GUI.color = new Color(0.1f, 0.07f, 0.02f);
+		Text.Anchor = TextAnchor.MiddleCenter;
+		Widgets.Label(pill, text);
+		Text.Anchor = TextAnchor.UpperLeft;
+		Text.Font = GameFont.Small;
+		GUI.color = Color.white;
 	}
 }
