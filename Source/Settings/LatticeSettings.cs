@@ -14,6 +14,7 @@ public class LatticeSettings : ModSettings
 	public bool restyleWidgets = true;
 	public bool movableWindows = true;
 	public bool centerWindows = true;
+	public bool pinWindows = true;
 	public BackdropMode backdropMode = BackdropMode.Latest;
 	public string backdropCustom = "";
 
@@ -26,6 +27,7 @@ public class LatticeSettings : ModSettings
 		Scribe_Values.Look(ref restyleWidgets, "restyleWidgets", true);
 		Scribe_Values.Look(ref movableWindows, "movableWindows", true);
 		Scribe_Values.Look(ref centerWindows, "centerWindows", true);
+		Scribe_Values.Look(ref pinWindows, "pinWindows", true);
 		Scribe_Values.Look(ref backdropMode, "backdropMode", BackdropMode.Latest);
 		Scribe_Values.Look(ref backdropCustom, "backdropCustom", "");
 	}
@@ -43,6 +45,7 @@ public class LatticeSettings : ModSettings
 		list.CheckboxLabeled("Restyle vanilla buttons, windows, tabs and lists everywhere (turn off if another UI mod conflicts)", ref restyleWidgets);
 		list.CheckboxLabeled("Windows can be dragged anywhere", ref movableWindows);
 		list.CheckboxLabeled("Open tab windows (work, research...) in the center", ref centerWindows);
+		list.CheckboxLabeled("Pin button on windows (keep several open at once)", ref pinWindows);
 		list.GapLine();
 		list.Label("Main menu background");
 		if (list.ButtonText($"Mode: {backdropMode}"))
@@ -81,6 +84,7 @@ public class LatticeSettings : ModSettings
 			restyleWidgets = true;
 			movableWindows = true;
 			centerWindows = true;
+			pinWindows = true;
 			backdropMode = BackdropMode.Latest;
 			backdropCustom = "";
 		}
