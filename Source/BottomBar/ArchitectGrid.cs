@@ -41,6 +41,11 @@ public static class ArchitectGrid
 	public static void DrawPopup(ArchitectCategoryTab tab, Designator forceActivated)
 	{
 		List<Designator> designators = tab.def.ResolvedAllowedDesignators.ToList();
+		IEnumerable<Designator> extras = LatticeApi.ExtraDesignators(tab.def);
+		if (extras != null)
+		{
+			designators.AddRange(extras);
+		}
 		int cols = Mathf.Min(Columns, Mathf.Max(1, designators.Count));
 		int rows = Mathf.CeilToInt(designators.Count / (float)cols);
 		float stripTop = UI.screenHeight - UiStyle.BarHeight - 1f - UiStyle.BarHeight;
