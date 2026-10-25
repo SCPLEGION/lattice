@@ -29,16 +29,32 @@ public static class ModManager
 		AccessTools.FieldRefAccess<Page_ModsConfig, ModMetaData>("primarySelectedMod");
 	private static readonly AccessTools.FieldRef<Page_ModsConfig, bool> Dirty =
 		AccessTools.FieldRefAccess<Page_ModsConfig, bool>("modListsDirty");
-	private static readonly Action<Page_ModsConfig, ModMetaData> SelectMod =
-		AccessTools.MethodDelegate<Action<Page_ModsConfig, ModMetaData>>(AccessTools.Method(typeof(Page_ModsConfig), "SelectMod"));
-	private static readonly Func<Page_ModsConfig, ModMetaData, bool> TryActivate =
-		AccessTools.MethodDelegate<Func<Page_ModsConfig, ModMetaData, bool>>(AccessTools.Method(typeof(Page_ModsConfig), "TrySetModActive"));
-	private static readonly Action<Page_ModsConfig, ModMetaData> TryDeactivate =
-		AccessTools.MethodDelegate<Action<Page_ModsConfig, ModMetaData>>(AccessTools.Method(typeof(Page_ModsConfig), "TrySetModInactive"));
-	private static readonly Action<Page_ModsConfig, Rect, ModMetaData> DoInfo =
-		AccessTools.MethodDelegate<Action<Page_ModsConfig, Rect, ModMetaData>>(AccessTools.Method(typeof(Page_ModsConfig), "DoModInfo"));
-	private static readonly Action<Page_ModsConfig, Rect> DoBottom =
-		AccessTools.MethodDelegate<Action<Page_ModsConfig, Rect>>(AccessTools.Method(typeof(Page_ModsConfig), "DoBottomButtons"));
+	private static Action<Page_ModsConfig, ModMetaData> SelectMod;
+	private static Func<Page_ModsConfig, ModMetaData, bool> TryActivate;
+	private static Action<Page_ModsConfig, ModMetaData> TryDeactivate;
+	private static Action<Page_ModsConfig, Rect, ModMetaData> DoInfo;
+	private static Action<Page_ModsConfig, Rect> DoBottom;
+
+	// False when a vanilla method could not be bound; the page then falls back to the vanilla list.
+	public static readonly bool Ready;
+
+	static ModManager()
+	{
+		try
+		{
+			Type page = typeof(Page_ModsConfig);
+			SelectMod = AccessTools.MethodDelegate<Action<Page_ModsConfig, ModMetaData>>(AccessTools.Method(page, "SelectMod", new[] { typeof(ModMetaData) }));
+			TryActivate = AccessTools.MethodDelegate<Func<Page_ModsConfig, ModMetaData, bool>>(AccessTools.Method(page, "TrySetModActive", new[] { typeof(ModMetaData) }));
+			TryDeactivate = AccessTools.MethodDelegate<Action<Page_ModsConfig, ModMetaData>>(AccessTools.Method(page, "TrySetModInactive", new[] { typeof(ModMetaData) }));
+			DoInfo = AccessTools.MethodDelegate<Action<Page_ModsConfig, Rect, ModMetaData>>(AccessTools.Method(page, "DoModInfo", new[] { typeof(Rect), typeof(ModMetaData) }));
+			DoBottom = AccessTools.MethodDelegate<Action<Page_ModsConfig, Rect>>(AccessTools.Method(page, "DoBottomButtons", new[] { typeof(Rect) }));
+			Ready = true;
+		}
+		catch (Exception ex)
+		{
+			Log.Warning("[Lattice] Mod manager cards disabled, vanilla list used instead: " + ex.Message);
+		}
+	}
 
 	private static Category category;
 	private static SortBy sortBy;
@@ -315,7 +331,7 @@ public static class Patch_ModsPageContents
 {
 	public static bool Prefix(Page_ModsConfig __instance, Rect rect)
 	{
-		if (!LatticeMod.Settings.restyleWidgets || ModManager.ListMode)
+		if (!LatticeMod.Settings.restyleWidgets || ModManager.ListMode || !ModManager.Ready)
 		{
 			return true;
 		}
@@ -325,7 +341,7 @@ public static class Patch_ModsPageContents
 
 	public static void Postfix(Rect rect)
 	{
-		if (!LatticeMod.Settings.restyleWidgets || !ModManager.ListMode)
+		if (!LatticeMod.Settings.restyleWidgets || !ModManager.ListMode || !ModManager.Ready)
 		{
 			return;
 		}
