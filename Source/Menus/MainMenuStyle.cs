@@ -41,8 +41,9 @@ public static class Patch_MenuOverlay
 		// The background rect extends past the visible artwork, so shade the screen, not bgRect.
 		Rect screen = new Rect(0f, 0f, UI.screenWidth, UI.screenHeight);
 		// The option list sits on the right: shade that side, keep the left light.
+		GUI.color = new Color(1f, 1f, 1f, LatticeMod.Settings.menuDim);
 		GUI.DrawTextureWithTexCoords(new Rect(screen.width * 0.45f, 0f, screen.width * 0.55f, screen.height), FadeTex, new Rect(1f, 0f, -1f, 1f));
-		GUI.color = new Color(1f, 1f, 1f, 0.45f);
+		GUI.color = new Color(1f, 1f, 1f, 0.45f * LatticeMod.Settings.menuDim);
 		GUI.DrawTexture(new Rect(0f, 0f, screen.width * 0.2f, screen.height), FadeTex);
 		GUI.color = Color.white;
 		// Only a very soft top shade; nothing along the bottom edge (no letterbox look).
@@ -121,10 +122,11 @@ public static class Patch_MenuBackground
 		float t = Time.realtimeSinceStartup;
 		// Cover the screen, then add a slow zoom + drift (Ken Burns).
 		float cover = Mathf.Max(sw / tex.width, sh / tex.height);
-		float zoom = 1.06f + 0.04f * Mathf.Sin(t * 0.045f);
+		bool drift = LatticeMod.Settings.kenBurns;
+		float zoom = drift ? 1.06f + 0.04f * Mathf.Sin(t * 0.045f) : 1f;
 		float w = tex.width * cover * zoom, h = tex.height * cover * zoom;
-		float x = (sw - w) / 2f + Mathf.Sin(t * 0.03f) * (w - sw) * 0.4f;
-		float y = (sh - h) / 2f + Mathf.Cos(t * 0.025f) * (h - sh) * 0.4f;
+		float x = (sw - w) / 2f + (drift ? Mathf.Sin(t * 0.03f) * (w - sw) * 0.4f : 0f);
+		float y = (sh - h) / 2f + (drift ? Mathf.Cos(t * 0.025f) * (h - sh) * 0.4f : 0f);
 		Widgets.DrawBoxSolid(new Rect(0f, 0f, sw, sh), Color.black);
 		GUI.color = new Color(1f, 1f, 1f, UiStyle.Smooth(fade));
 		GUI.DrawTexture(new Rect(x, y, w, h), tex, ScaleMode.StretchToFill);
@@ -179,7 +181,7 @@ public static class Patch_OptionListing
 			Widgets.DrawBoxSolid(new Rect(row.x + 2f, row.y + row.height * 0.25f, 2f, row.height * 0.5f * h), UiStyle.WithAlpha(UiStyle.Accent, 0.55f * h));
 			Text.Font = GameFont.Medium;
 			Text.Anchor = TextAnchor.MiddleLeft;
-			string label = opt.label.ToUpperInvariant();
+			string label = LatticeMod.Settings.menuUppercase ? opt.label.ToUpperInvariant() : opt.label;
 			Rect text = new Rect(row.x + 8f + 10f * h, row.y, row.width - 16f, row.height);
 			GUI.color = new Color(0f, 0f, 0f, 0.85f);
 			Widgets.Label(text.MovedBy(new Vector2(1.5f, 2f)), label);

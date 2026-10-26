@@ -9,13 +9,15 @@ namespace Lattice;
 public static class UiStyle
 {
 	// Palette
-	public static readonly Color PanelTop = new Color(0.115f, 0.13f, 0.16f, 0.96f);
-	public static readonly Color PanelBottom = new Color(0.045f, 0.05f, 0.065f, 0.97f);
-	public static readonly Color PanelBg = new Color(0.07f, 0.08f, 0.1f, 0.96f);
+	// Panel alpha and the accent follow the user's settings, so every panel, gradient and highlight updates at once.
+	private static float PanelOpacity => LatticeMod.Settings?.panelOpacity ?? 1f;
+	public static Color PanelTop => new Color(0.115f, 0.13f, 0.16f, 0.96f * PanelOpacity);
+	public static Color PanelBottom => new Color(0.045f, 0.05f, 0.065f, 0.97f * PanelOpacity);
+	public static Color PanelBg => new Color(0.07f, 0.08f, 0.1f, 0.96f * PanelOpacity);
 	public static readonly Color CellBg = new Color(1f, 1f, 1f, 0.045f);
 	public static readonly Color CellHover = new Color(1f, 1f, 1f, 0.12f);
-	public static readonly Color Accent = new Color(0.98f, 0.74f, 0.28f);
-	public static readonly Color AccentGlow = new Color(1f, 0.62f, 0.15f, 0.55f);
+	public static Color Accent => LatticeMod.Settings != null ? new Color(LatticeMod.Settings.accentR, LatticeMod.Settings.accentG, LatticeMod.Settings.accentB) : new Color(0.98f, 0.74f, 0.28f);
+	public static Color AccentGlow => WithAlpha(Color.Lerp(Accent, Color.white, 0.12f), 0.55f);
 	public static readonly Color Highlight = new Color(1f, 1f, 1f, 0.16f);
 	public static readonly Color Hairline = new Color(1f, 1f, 1f, 0.07f);
 	public static readonly Color Shadow = new Color(0f, 0f, 0f, 0.55f);
@@ -76,6 +78,11 @@ public static class UiStyle
 	public static float Ease(int key, float target, float speed = 12f)
 	{
 		eased.TryGetValue(key, out float v);
+		if (LatticeMod.Settings != null && !LatticeMod.Settings.animations)
+		{
+			eased[key] = target;
+			return target;
+		}
 		if (Event.current != null && Event.current.type == EventType.Repaint)
 		{
 			v = Mathf.MoveTowards(v, target, Mathf.Max(0.0001f, speed) * Time.unscaledDeltaTime);
