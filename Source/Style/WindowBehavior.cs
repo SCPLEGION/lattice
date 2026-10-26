@@ -30,7 +30,9 @@ public static class Patch_WindowsMovable
 		bool modded;
 		if (t != typeof(MainTabWindow_Research))
 		{
-			modded = w is MainTabWindow_Research || t.Name.IndexOf("Research", System.StringComparison.OrdinalIgnoreCase) >= 0;
+			// Also covers tree mods whose class has no "Research" in its name (YART) but that took over the Research button.
+			modded = w is MainTabWindow_Research || t.Name.IndexOf("Research", System.StringComparison.OrdinalIgnoreCase) >= 0
+				|| MainButtonDefOf.Research?.tabWindowClass == t;
 		}
 		else
 		{
