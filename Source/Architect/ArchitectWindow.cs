@@ -47,6 +47,9 @@ public static class ArchitectGrid
 	private static Designator lastSelected;
 	private static Vector2 barScroll;
 
+	// Same rule as vanilla: designators that are hidden (research not finished, wrong game mode...) are not shown.
+	public static List<Designator> VisibleDesignators(ArchitectCategoryTab tab) => tab.def.ResolvedAllowedDesignators.Where(d => d.Visible).ToList();
+
 	public static bool WantsBar(ArchitectCategoryTab open)
 	{
 		Designator sel = Find.DesignatorManager.SelectedDesignator;
@@ -69,7 +72,7 @@ public static class ArchitectGrid
 
 	public static void DrawBar(ArchitectCategoryTab tab, Rect inRect, Designator forceActivated)
 	{
-		List<Designator> designators = tab.def.ResolvedAllowedDesignators.ToList();
+		List<Designator> designators = VisibleDesignators(tab);
 		Designator selected = Find.DesignatorManager.SelectedDesignator;
 
 		Rect left = new Rect(0f, 0f, BarLeft, inRect.height);
@@ -141,7 +144,7 @@ public static class ArchitectGrid
 
 	public static void DrawGrid(ArchitectCategoryTab tab, Rect gridRect, Rect infoRect, Designator forceActivated)
 	{
-		List<Designator> designators = tab.def.ResolvedAllowedDesignators.ToList();
+		List<Designator> designators = VisibleDesignators(tab);
 		if (lastTab != tab)
 		{
 			lastTab = tab;
@@ -310,7 +313,7 @@ public static class Patch_DoWindowContents
 			if (bar)
 			{
 				ArchitectGrid.FullRect = __instance.windowRect;
-				__instance.windowRect = ArchitectGrid.BarRect(open.def.ResolvedAllowedDesignators.Count());
+				__instance.windowRect = ArchitectGrid.BarRect(ArchitectGrid.VisibleDesignators(open).Count);
 			}
 			else
 			{
