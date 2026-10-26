@@ -10,6 +10,7 @@ public class LatticeSettings : ModSettings
 	public int columns = 8;
 	public float cellSize = 84f;
 	public bool showInfoPanel = true;
+	public bool compactArchitect = true;
 	public bool dock = true;
 	public bool restyleWidgets = true;
 	public bool movableWindows = true;
@@ -31,6 +32,7 @@ public class LatticeSettings : ModSettings
 		Scribe_Values.Look(ref columns, "columns", 8);
 		Scribe_Values.Look(ref cellSize, "cellSize", 84f);
 		Scribe_Values.Look(ref showInfoPanel, "showInfoPanel", true);
+		Scribe_Values.Look(ref compactArchitect, "compactArchitect", true);
 		Scribe_Values.Look(ref dock, "dock", true);
 		Scribe_Values.Look(ref restyleWidgets, "restyleWidgets", true);
 		Scribe_Values.Look(ref movableWindows, "movableWindows", true);
@@ -123,6 +125,7 @@ public class LatticeSettings : ModSettings
 		list.Label($"Cell size: {cellSize:0}px");
 		cellSize = Mathf.Round(list.Slider(cellSize, 64f, 110f));
 		list.CheckboxLabeled("Show info panel next to the grid", ref showInfoPanel);
+		list.CheckboxLabeled("Shrink to a slim bar once something is selected", ref compactArchitect);
 	}
 
 	private void DoMenu(Listing_Standard list)
@@ -163,6 +166,7 @@ public class LatticeSettings : ModSettings
 		columns = 8;
 		cellSize = 84f;
 		showInfoPanel = true;
+		compactArchitect = true;
 		dock = true;
 		restyleWidgets = true;
 		movableWindows = true;

@@ -36,6 +36,100 @@ public static class ArchitectGrid
 		return new Vector2(w, Mathf.Max(h, 380f));
 	}
 
+	// Slim bar shown once a designator is picked (like a city-builder toolbar): category on the left,
+	// the category's tools in one scrollable row. The expand button brings the full window back.
+	public const float BarCell = 76f;
+	public const float BarHeight = 100f;
+	public const float BarLeft = 150f;
+	public static bool ForceFull;
+	public static bool ShownBar;
+	public static Rect FullRect;
+	private static Designator lastSelected;
+	private static Vector2 barScroll;
+
+	public static bool WantsBar(ArchitectCategoryTab open)
+	{
+		Designator sel = Find.DesignatorManager.SelectedDesignator;
+		if (sel != lastSelected)
+		{
+			if (sel != null)
+			{
+				ForceFull = false;
+			}
+			lastSelected = sel;
+		}
+		return LatticeMod.Settings.compactArchitect && sel != null && !ForceFull && open != null;
+	}
+
+	public static Rect BarRect(int count)
+	{
+		float w = Mathf.Min(UI.screenWidth - 40f, BarLeft + count * BarCell + 24f);
+		return new Rect((UI.screenWidth - w) / 2f, FullRect.yMax - BarHeight, w, BarHeight);
+	}
+
+	public static void DrawBar(ArchitectCategoryTab tab, Rect inRect, Designator forceActivated)
+	{
+		List<Designator> designators = tab.def.ResolvedAllowedDesignators.ToList();
+		Designator selected = Find.DesignatorManager.SelectedDesignator;
+
+		Rect left = new Rect(0f, 0f, BarLeft, inRect.height);
+		Widgets.DrawBoxSolid(left, new Color(0f, 0f, 0f, 0.22f));
+		Texture icon = CategoryIcon(tab.def);
+		if (icon != null)
+		{
+			GUI.DrawTexture(new Rect(10f, 10f, 22f, 22f), icon);
+		}
+		Text.Anchor = TextAnchor.MiddleLeft;
+		Widgets.Label(new Rect(icon != null ? 38f : 10f, 8f, BarLeft - 46f, 26f), tab.def.LabelCap);
+		Text.Anchor = TextAnchor.UpperLeft;
+		if (selected != null)
+		{
+			Text.Font = GameFont.Tiny;
+			GUI.color = UiStyle.TextSoft;
+			Widgets.Label(new Rect(10f, 36f, BarLeft - 16f, 28f), selected.LabelCap.Truncate(BarLeft - 20f));
+			GUI.color = Color.white;
+			Text.Font = GameFont.Small;
+		}
+		Rect expand = new Rect(8f, inRect.height - 32f, BarLeft - 16f, 26f);
+		Widgets.DrawBoxSolidWithOutline(expand, new Color(1f, 1f, 1f, Mouse.IsOver(expand) ? 0.12f : 0.05f), UiStyle.Hairline, 1);
+		Text.Anchor = TextAnchor.MiddleCenter;
+		Widgets.Label(expand, "▲ All categories");
+		Text.Anchor = TextAnchor.UpperLeft;
+		if (Widgets.ButtonInvisible(expand))
+		{
+			ForceFull = true;
+		}
+
+		float contentW = designators.Count * BarCell;
+		Rect outRect = new Rect(BarLeft + 8f, 6f, inRect.width - BarLeft - 14f, inRect.height - 12f);
+		bool bar = contentW > outRect.width;
+		Rect view = new Rect(0f, 0f, contentW, outRect.height - (bar ? 16f : 0f));
+		if (bar && Event.current.type == EventType.ScrollWheel && outRect.Contains(Event.current.mousePosition))
+		{
+			barScroll.x += Event.current.delta.y * 40f;
+			Event.current.Use();
+		}
+		Widgets.BeginScrollView(outRect, ref barScroll, view);
+		for (int i = 0; i < designators.Count; i++)
+		{
+			Designator d = designators[i];
+			Rect c = new Rect(i * BarCell, 0f, BarCell - 4f, BarCell - 4f);
+			bool dim = !MatchesSearch(d);
+			bool clicked = UiStyle.IconCell(c, Icons.For(d), d.LabelCap, selected == d, d.Disabled, dim,
+				d.iconDrawScale, d.iconProportions, d.iconTexCoords, d.iconAngle, d.IconDrawColor);
+			if (Mouse.IsOver(c))
+			{
+				TooltipHandler.TipRegion(c, d.LabelCap + "\n\n" + d.Desc);
+			}
+			if (forceActivated == d || clicked || (d.hotKey != null && d.hotKey.KeyDownEvent))
+			{
+				d.ProcessInput(Event.current);
+				Event.current.Use();
+			}
+		}
+		Widgets.EndScrollView();
+	}
+
 	private static readonly AccessTools.FieldRef<MainTabWindow_Architect, QuickSearchWidget> SearchRef =
 		AccessTools.FieldRefAccess<MainTabWindow_Architect, QuickSearchWidget>("quickSearchWidget");
 
@@ -174,6 +268,9 @@ public static class Patch_ArchitectPosition
 			r.x = (UI.screenWidth - r.width) / 2f;
 			r.y -= 8f;
 			__instance.windowRect = r;
+			ArchitectGrid.FullRect = r;
+			ArchitectGrid.ShownBar = false;
+			ArchitectGrid.ForceFull = false;
 		}
 	}
 }
@@ -205,6 +302,29 @@ public static class Patch_DoWindowContents
 		QuickSearchWidget search = Search(__instance);
 		ArchitectCategoryTab open = __instance.selectedDesPanel;
 		ArchitectGrid.BlockRect = __instance.windowRect;
+
+		// Swap between the full window and the slim bar; the new rect is drawn from the next frame.
+		bool bar = ArchitectGrid.WantsBar(open);
+		if (bar != ArchitectGrid.ShownBar)
+		{
+			if (bar)
+			{
+				ArchitectGrid.FullRect = __instance.windowRect;
+				__instance.windowRect = ArchitectGrid.BarRect(open.def.ResolvedAllowedDesignators.Count());
+			}
+			else
+			{
+				__instance.windowRect = ArchitectGrid.FullRect;
+			}
+			ArchitectGrid.ShownBar = bar;
+			return false;
+		}
+		if (bar)
+		{
+			ArchitectGrid.DrawBar(open, inRect, ForceActivated(__instance));
+			ForceActivated(__instance) = null;
+			return false;
+		}
 
 		if (KeyBindingDefOf.Accept.KeyDownEvent)
 		{
