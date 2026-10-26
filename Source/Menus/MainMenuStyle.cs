@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -5,8 +7,8 @@ using Verse;
 
 namespace Lattice;
 
-// Cinematic main menu: letterbox bars, a dark falloff on the left where the menu sits, a slow
-// breathing glow along the bottom and a panel behind the option list.
+// Cinematic main menu: no boxes, no bars. A dark falloff on the left where the menu sits and a soft vignette;
+// the options are bare, shadowed text with a faint accent tick on hover.
 [HarmonyPatch(typeof(UI_BackgroundMain), "DoOverlay")]
 public static class Patch_MenuOverlay
 {
@@ -38,20 +40,58 @@ public static class Patch_MenuOverlay
 	{
 		// The background rect extends past the visible artwork, so shade the screen, not bgRect.
 		Rect screen = new Rect(0f, 0f, UI.screenWidth, UI.screenHeight);
-		GUI.DrawTexture(new Rect(0f, 0f, screen.width * 0.5f, screen.height), FadeTex);
-		float top = screen.height * 0.12f;
-		UiStyle.DrawGradient(new Rect(0f, 0f, screen.width, top), new Color(0f, 0f, 0f, 0.7f), new Color(0f, 0f, 0f, 0f));
+		// The option list sits on the right: shade that side, keep the left light.
+		GUI.DrawTextureWithTexCoords(new Rect(screen.width * 0.45f, 0f, screen.width * 0.55f, screen.height), FadeTex, new Rect(1f, 0f, -1f, 1f));
+		GUI.color = new Color(1f, 1f, 1f, 0.45f);
+		GUI.DrawTexture(new Rect(0f, 0f, screen.width * 0.2f, screen.height), FadeTex);
+		GUI.color = Color.white;
+		// Only a very soft top shade; nothing along the bottom edge (no letterbox look).
+		UiStyle.DrawGradient(new Rect(0f, 0f, screen.width, screen.height * 0.14f), new Color(0f, 0f, 0f, 0.35f), new Color(0f, 0f, 0f, 0f));
 	}
 }
 
 [HarmonyPatch(typeof(MainMenuDrawer), nameof(MainMenuDrawer.DoMainMenuControls))]
 public static class Patch_MainMenuControls
 {
-	public static void Prefix(Rect rect)
+	public static bool Active;
+
+	// No panel: the options float over the artwork, readable thanks to the dark falloff behind them.
+	public static void Prefix() => Active = true;
+
+	public static void Finalizer() => Active = false;
+
+	// Language picker: drawn as a quiet text link in the bottom-right corner instead of a box under the links.
+	public static void Postfix()
 	{
-		Rect panel = rect.ExpandedBy(18f);
-		UiStyle.DrawPanel(panel, 0.9f);
-		Widgets.DrawBoxSolid(new Rect(panel.x, panel.y + 10f, 3f, panel.height - 20f), UiStyle.Accent);
+		if (Current.ProgramState != ProgramState.Entry)
+		{
+			return;
+		}
+		string label = LanguageDatabase.activeLanguage.FriendlyNameNative;
+		Rect r = new Rect(UI.screenWidth - 190f, UI.screenHeight - 46f, 170f, 28f);
+		bool hover = Mouse.IsOver(r);
+		float h = UiStyle.Ease(UiStyle.Key(2901, r), hover ? 1f : 0f);
+		Text.Anchor = TextAnchor.MiddleRight;
+		GUI.color = new Color(0f, 0f, 0f, 0.8f);
+		Widgets.Label(r.MovedBy(new Vector2(1f, 1.5f)), label);
+		GUI.color = Color.Lerp(UiStyle.TextSoft, UiStyle.Accent, h);
+		Widgets.Label(r, label);
+		GUI.color = Color.white;
+		Text.Anchor = TextAnchor.UpperLeft;
+		if (Widgets.ButtonInvisible(r))
+		{
+			List<FloatMenuOption> options = new List<FloatMenuOption>();
+			foreach (LoadedLanguage lang in LanguageDatabase.AllLoadedLanguages)
+			{
+				LoadedLanguage pick = lang;
+				options.Add(new FloatMenuOption(pick.DisplayName, () =>
+				{
+					LanguageDatabase.SelectLanguage(pick);
+					Prefs.Save();
+				}));
+			}
+			Find.WindowStack.Add(new FloatMenu(options));
+		}
 	}
 }
 
@@ -99,7 +139,21 @@ public static class Patch_MenuBackground
 public static class Patch_OptionListing
 {
 	private const float RowHeight = 46f;
-	private const float Gap = 4f;
+	private const float Gap = 2f;
+	private static Texture2D Fade => FadeRamp ??= Ramp();
+	private static Texture2D FadeRamp;
+
+	// Horizontal white ramp (opaque -> clear) tinted per draw call.
+	private static Texture2D Ramp()
+	{
+		Texture2D t = new Texture2D(64, 1, TextureFormat.RGBA32, false) { wrapMode = TextureWrapMode.Clamp };
+		for (int i = 0; i < 64; i++)
+		{
+			t.SetPixel(i, 0, new Color(1f, 1f, 1f, 1f - i / 63f));
+		}
+		t.Apply();
+		return t;
+	}
 	private static readonly AccessTools.FieldRef<ListableOption, string> HighlightTag = AccessTools.FieldRefAccess<ListableOption, string>("uiHighlightTag");
 
 	public static bool Prefix(Rect rect, System.Collections.Generic.List<ListableOption> optList, ref float __result)
@@ -118,12 +172,19 @@ public static class Patch_OptionListing
 			Rect row = new Rect(0f, y, rect.width, rowH);
 			bool hover = Mouse.IsOver(row);
 			float h = UiStyle.Ease(UiStyle.Key(2201 + i, row), hover ? 1f : 0f);
-			UiStyle.DrawGradient(row, UiStyle.WithAlpha(UiStyle.PanelTop, 0.55f + 0.4f * h), UiStyle.WithAlpha(UiStyle.PanelBottom, 0.55f + 0.3f * h));
-			Widgets.DrawBoxSolid(new Rect(row.x, row.y, 3f + 5f * h, row.height), UiStyle.WithAlpha(UiStyle.Accent, 0.35f + 0.65f * h));
+			// A faint light wash that follows the cursor, and a thin accent line that draws itself under the label.
+			GUI.color = new Color(1f, 0.85f, 0.55f, 0.16f * h);
+			GUI.DrawTexture(new Rect(row.x, row.y, row.width * (0.5f + 0.5f * h), row.height), Fade);
+			GUI.color = Color.white;
+			Widgets.DrawBoxSolid(new Rect(row.x + 2f, row.y + row.height * 0.25f, 2f, row.height * 0.5f * h), UiStyle.WithAlpha(UiStyle.Accent, 0.55f * h));
 			Text.Font = GameFont.Medium;
 			Text.Anchor = TextAnchor.MiddleLeft;
-			GUI.color = Color.Lerp(UiStyle.TextSoft, Color.white, h);
-			Widgets.Label(new Rect(row.x + 18f + 6f * h, row.y, row.width - 24f, row.height), opt.label);
+			string label = opt.label.ToUpperInvariant();
+			Rect text = new Rect(row.x + 8f + 10f * h, row.y, row.width - 16f, row.height);
+			GUI.color = new Color(0f, 0f, 0f, 0.85f);
+			Widgets.Label(text.MovedBy(new Vector2(1.5f, 2f)), label);
+			GUI.color = Color.Lerp(UiStyle.TextSoft, UiStyle.WithAlpha(UiStyle.Accent, 1f), h);
+			Widgets.Label(text, label);
 			GUI.color = Color.white;
 			Text.Anchor = TextAnchor.UpperLeft;
 			Text.Font = GameFont.Small;
@@ -141,5 +202,55 @@ public static class Patch_OptionListing
 		GUI.EndGroup();
 		__result = y;
 		return false;
+	}
+}
+
+// DLC icons in the bottom-left corner drawn smaller (scaled around the corner; hit-testing follows the matrix).
+[HarmonyPatch(typeof(MainMenuDrawer), nameof(MainMenuDrawer.DoExpansionIcons))]
+public static class Patch_ExpansionIcons
+{
+	private const float Scale = 0.62f;
+
+	public static void Prefix(out Matrix4x4 __state)
+	{
+		__state = GUI.matrix;
+		Matrix4x4 pivot = Matrix4x4.Translate(new Vector3(0f, UI.screenHeight, 0f));
+		GUI.matrix = __state * pivot * Matrix4x4.Scale(new Vector3(Scale, Scale, 1f)) * pivot.inverse;
+	}
+
+	public static void Finalizer(Matrix4x4 __state) => GUI.matrix = __state;
+}
+
+// The translucent dark slab vanilla draws behind the link column.
+[HarmonyPatch(typeof(Widgets), nameof(Widgets.DrawAtlas), typeof(Rect), typeof(Texture2D))]
+public static class Patch_MenuLinksSlab
+{
+	public static bool Prefix(Texture2D atlas) => !(Patch_MainMenuControls.Active && atlas != null && atlas.name == "SubtleGradient");
+}
+
+// The vanilla language button (a box under the links) is swallowed; Patch_MainMenuControls draws its own.
+[HarmonyPatch]
+public static class Patch_MenuLanguageButton
+{
+	private static IEnumerable<MethodBase> TargetMethods()
+	{
+		foreach (MethodInfo m in AccessTools.GetDeclaredMethods(typeof(Widgets)))
+		{
+			ParameterInfo[] ps = m.GetParameters();
+			if (m.Name == "ButtonText" && ps.Length >= 2 && ps[0].ParameterType == typeof(Rect) && ps[1].ParameterType == typeof(string))
+			{
+				yield return m;
+			}
+		}
+	}
+
+	public static bool Prefix(string label, ref bool __result)
+	{
+		if (Patch_MainMenuControls.Active && Current.ProgramState == ProgramState.Entry && label == LanguageDatabase.activeLanguage.FriendlyNameNative)
+		{
+			__result = false;
+			return false;
+		}
+		return true;
 	}
 }

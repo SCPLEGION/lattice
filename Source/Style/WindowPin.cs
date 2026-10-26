@@ -34,7 +34,7 @@ public static class WindowPins
 		LatticeMod.Settings.pinWindows && w != null && w.doWindowBackground
 		&& ((w is MainTabWindow && !(w is MainTabWindow_Inspect)) || PinnableDialogs.Contains(w.GetType().Name));
 
-	public static Rect ChipRect(Window w) => new Rect(w.windowRect.width - 50f - (w.doCloseX ? 30f : 0f), 2f, 46f, 16f);
+	public static Rect ChipRect(Window w) => new Rect(w.windowRect.width - 24f - (w.doCloseX ? 30f : 0f), 3f, 18f, 18f);
 
 	public static void Toggle(Window w)
 	{
@@ -85,14 +85,20 @@ public static class Patch_PinChip
 		Rect chip = WindowPins.ChipRect(__instance);
 		bool pinned = WindowPins.IsPinned(__instance);
 		bool hover = Mouse.IsOver(chip);
-		Widgets.DrawBoxSolid(chip, pinned ? UiStyle.WithAlpha(UiStyle.Accent, 0.9f) : new Color(0f, 0f, 0f, hover ? 0.7f : 0.45f));
-		Text.Font = GameFont.Tiny;
-		Text.Anchor = TextAnchor.MiddleCenter;
-		GUI.color = pinned ? Color.black : (hover ? Color.white : UiStyle.TextSoft);
-		Widgets.Label(chip, pinned ? "Pinned" : "Pin");
+		Color col = pinned ? UiStyle.Accent : (hover ? Color.white : UiStyle.TextSoft);
+		Matrix4x4 prev = GUI.matrix;
+		if (!pinned)
+		{
+			GUIUtility.RotateAroundPivot(45f, chip.center);
+		}
+		GUI.color = col;
+		float cx = chip.center.x, top = chip.y + 1f;
+		Widgets.DrawBoxSolid(new Rect(cx - 4f, top, 8f, 2f), col);
+		Widgets.DrawBoxSolid(new Rect(cx - 2f, top + 2f, 4f, 5f), col);
+		Widgets.DrawBoxSolid(new Rect(cx - 5f, top + 7f, 10f, 2f), col);
+		Widgets.DrawBoxSolid(new Rect(cx - 0.5f, top + 9f, 1f, 6f), col);
+		GUI.matrix = prev;
 		GUI.color = Color.white;
-		Text.Anchor = TextAnchor.UpperLeft;
-		Text.Font = GameFont.Small;
 		if (hover)
 		{
 			TooltipHandler.TipRegion(chip, pinned ? "Unpin" : "Pin: keep this window open (and open other tabs next to it)");
