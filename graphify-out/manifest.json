@@ -6,10 +6,10 @@
     "semantic_hash": "2a9af5f044cb2a108d1d114943e85b2c"
   },
   "Source/Architect/ArchitectWindow.cs": {
-    "mtime": 1792997562.0577126,
-    "seen": 1793002198.6084058,
-    "ast_hash": "b3343b465c79c31975f51849cf57223f",
-    "semantic_hash": "b3343b465c79c31975f51849cf57223f"
+    "mtime": 1793019222.1129334,
+    "seen": 1793019227.4526517,
+    "ast_hash": "980dadc117425640ede7f22fc1d5e13d",
+    "semantic_hash": ""
   },
   "Source/Bills/BillsStyle.cs": {
     "mtime": 1792997562.0577126,
@@ -60,9 +60,9 @@
     "semantic_hash": "7d4474b2ffdd14ef0f7a2b0090b6fc9d"
   },
   "Source/Menus/MainMenuStyle.cs": {
-    "mtime": 1793004832.3499758,
-    "seen": 1793004839.6846583,
-    "ast_hash": "44813c396bd6690e9c7dc7bcdb23ec11",
+    "mtime": 1793018382.1136987,
+    "seen": 1793018397.0419867,
+    "ast_hash": "f4485aa4eb986a9598fd8185419ce825",
     "semantic_hash": ""
   },
   "Source/Menus/ModManager.cs": {
@@ -90,10 +90,10 @@
     "semantic_hash": "d69226a13eb7c4ab52235c1993f609a7"
   },
   "Source/Settings/LatticeSettings.cs": {
-    "mtime": 1792997562.0594237,
-    "seen": 1793002198.6084442,
-    "ast_hash": "adb2e6f4b6368c92bbde7168c6ca0c9e",
-    "semantic_hash": "adb2e6f4b6368c92bbde7168c6ca0c9e"
+    "mtime": 1793018806.4256475,
+    "seen": 1793018816.0507483,
+    "ast_hash": "71df9990881016e9764db7d670d6fe22",
+    "semantic_hash": ""
   },
   "Source/Style/ButtonStyle.cs": {
     "mtime": 1792997562.0594237,
@@ -120,15 +120,15 @@
     "semantic_hash": "dd1a06f9ef0ac45da2a946010e8568ec"
   },
   "Source/Style/UiStyle.cs": {
-    "mtime": 1792997562.0594237,
-    "seen": 1793002198.6084569,
-    "ast_hash": "34e806704f6f6bb298fba819de34661b",
-    "semantic_hash": "34e806704f6f6bb298fba819de34661b"
+    "mtime": 1793018382.1132598,
+    "seen": 1793018397.0420172,
+    "ast_hash": "2853df7fe75f1ef0d141ebb0d6e1e3d2",
+    "semantic_hash": ""
   },
   "Source/Style/WindowBehavior.cs": {
-    "mtime": 1793008665.5268373,
-    "seen": 1793008675.413719,
-    "ast_hash": "1307781b389e103dbfe70fce843c5bd4",
+    "mtime": 1793017674.93609,
+    "seen": 1793017689.463452,
+    "ast_hash": "ed50fc226856ac97920ecf1448543403",
     "semantic_hash": ""
   },
   "Source/Style/WindowPin.cs": {

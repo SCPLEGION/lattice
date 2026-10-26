@@ -1,22 +1,22 @@
 # Graph Report - rimworld-ui-rework  (2026-10-26)
 
 ## Corpus Check
-- 27 files · ~14,733 words
+- 27 files · ~15,827 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 3, .xml 1)
 
 ## Summary
-- 443 nodes · 981 edges · 32 communities (26 shown, 6 thin omitted)
+- 462 nodes · 1027 edges · 29 communities (26 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b8e88f73`
+- Built from commit: `13596edc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- UiStyle
+- .IconCell
 - Lattice
 - ArchitectGrid
 - ModManager
@@ -31,35 +31,32 @@
 - .Chip
 - Lattice.csproj
 - GroupBy
-- VerMode
-- .IsResearch
-- .DrawGradient
+- UiStyle
+- Patch_WindowsMovable
+- .Ease
 - ModStore
 - .WithAlpha
 - LatticeSettings
-- Rect
+- .Prefix
 - Rect
 - Patch_MenuLanguageButton
 - .Postfix
 - Patch_ExpansionIcons
 - .Postfix
 - .MovedBy
-- .Prefix
 - Patch_MainMenuControls
-- Rect
-- .Prefix
 
 ## God Nodes (most connected - your core abstractions)
 1. `ModManager` - 71 edges
-2. `Lattice` - 25 edges
-3. `UiStyle` - 21 edges
+2. `UiStyle` - 27 edges
+3. `Lattice` - 25 edges
 4. `ModStore` - 20 edges
-5. `ArchitectGrid` - 14 edges
-6. `Backdrops` - 11 edges
-7. `WindowPins` - 11 edges
-8. `Dialog_LatticeName` - 10 edges
-9. `Category` - 9 edges
-10. `BillsTab` - 8 edges
+5. `ArchitectGrid` - 18 edges
+6. `LatticeSettings` - 14 edges
+7. `Backdrops` - 11 edges
+8. `WindowPins` - 11 edges
+9. `Dialog_LatticeName` - 10 edges
+10. `Category` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `LatticeMod` --references--> `LatticeSettings`  [EXTRACTED]
@@ -71,23 +68,23 @@
 ## Hyperedges (group relationships)
 - **Lattice UI features** — readme_icon_dock, readme_architect_window, readme_cinematic_main_menu, readme_bills_tab, readme_restyled_widgets [EXTRACTED 1.00]
 
-## Communities (32 total, 6 thin omitted)
+## Communities (29 total, 3 thin omitted)
 
-### Community 0 - "UiStyle"
-Cohesion: 0.16
-Nodes (12): MainButtonWorker, Rect, MainButtonStyle, Color, Dictionary, Rect, Texture, Texture2D (+4 more)
+### Community 0 - ".IconCell"
+Cohesion: 0.24
+Nodes (7): MainButtonWorker, Rect, MainButtonStyle, Color, Rect, Texture, Vector2
 
 ### Community 1 - "Lattice"
 Cohesion: 0.13
 Nodes (20): Lattice, harmonylib, rimworld, MainTabWindow, Patch_ArchitectPosition, Patch_DesignationTabOnGUI, Rect, Patch_InspectPaneOnGUI (+12 more)
 
 ### Community 2 - "ArchitectGrid"
-Cohesion: 0.08
+Cohesion: 0.09
 Nodes (25): ArchitectCategoryTab, MainTabWindow_Architect, Action, DesignationCategoryDef, Designator, FieldRef, MethodInfo, Rect (+17 more)
 
 ### Community 3 - "ModManager"
-Cohesion: 0.09
-Nodes (22): Category, Func, GroupBy, Page_ModsConfig, SortBy, Action, Color, FieldRef (+14 more)
+Cohesion: 0.08
+Nodes (27): Category, Func, GroupBy, Page_ModsConfig, SortBy, Action, Color, FieldRef (+19 more)
 
 ### Community 4 - "Backdrops"
 Cohesion: 0.10
@@ -129,33 +126,33 @@ Nodes (3): net10.0, Lib.Harmony (2.3.6), Microsoft.NET.Sdk
 Cohesion: 0.33
 Nodes (6): GroupBy, Author, None, Source, Tag, Version
 
-### Community 15 - "VerMode"
-Cohesion: 0.40
-Nodes (5): VerMode, AtLeast, Below, Excludes, Supports
+### Community 15 - "UiStyle"
+Cohesion: 0.15
+Nodes (11): Dictionary, Texture2D, UiStyle, Accent, AccentGlow, Glow, Gradient, PanelBg (+3 more)
 
-### Community 16 - ".IsResearch"
-Cohesion: 0.38
-Nodes (4): MainTabWindow, Window, Patch_TabWindowsCentered, Patch_WindowsMovable
+### Community 16 - "Patch_WindowsMovable"
+Cohesion: 0.32
+Nodes (5): MainTabWindow, Window, Patch_TabWindowsCentered, Patch_WindowsMovable, Type, bool&gt;
 
-### Community 17 - ".DrawGradient"
-Cohesion: 0.16
-Nodes (9): Patch_BillDoInterface, List, Rect, ModMetaData, Patch_ModRow, Patch_OptionBackground, FieldRef, Patch_TabRecordDraw (+1 more)
+### Community 17 - ".Ease"
+Cohesion: 0.15
+Nodes (9): Patch_BillDoInterface, List, Rect, Rect, Patch_OptionBackground, Patch_PageTitle, FieldRef, Patch_TabRecordDraw (+1 more)
 
 ### Community 18 - "ModStore"
 Cohesion: 0.19
 Nodes (8): ConcurrentDictionary, Patch_ModsPageClose, Dictionary, HashSet, List, ModMetaData, ModStore, FilePath
 
 ### Community 19 - ".WithAlpha"
-Cohesion: 0.16
-Nodes (9): MainButtonsRoot, FieldRef, Patch_Dock, Patch_GlobalControlsPanel, Color, Rect, Patch_DrawMenuSection, Patch_DrawWindowBackground (+1 more)
+Cohesion: 0.12
+Nodes (14): MainButtonsRoot, Rect, Patch_BillConfigContents, FieldRef, Patch_Dock, Patch_HighlightSelected, Alert, Patch_AlertCard (+6 more)
 
 ### Community 20 - "LatticeSettings"
-Cohesion: 0.15
-Nodes (10): Mod, ModSettings, Rect, LatticeMod, Rect, BackdropMode, Custom, Latest (+2 more)
+Cohesion: 0.14
+Nodes (13): Listing_Standard, Mod, ModSettings, Rect, LatticeMod, Color, Rect, Vector2 (+5 more)
 
-### Community 21 - "Rect"
-Cohesion: 0.29
-Nodes (4): Rect, Patch_HighlightMouseover, Patch_HighlightSelected, Patch_ModInfo
+### Community 21 - ".Prefix"
+Cohesion: 0.25
+Nodes (5): ModMetaData, Rect, Patch_HighlightMouseover, Patch_ModInfo, Patch_ModRow
 
 ### Community 22 - "Rect"
 Cohesion: 0.29
@@ -178,24 +175,24 @@ Cohesion: 0.50
 Nodes (3): Rect, Vector2, RectExt
 
 ## Knowledge Gaps
-- **44 isolated node(s):** `CellSize`, `InfoWidth`, `Columns`, `net10.0`, `Lib.Harmony (2.3.6)` (+39 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 120 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **50 isolated node(s):** `CellSize`, `InfoWidth`, `Columns`, `net10.0`, `Lib.Harmony (2.3.6)` (+45 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 129 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ModManager` connect `ModManager` to `Lattice`, `.DrawCatalog`, `Category`, `.Postfix`, `GroupBy`, `VerMode`, `.DrawGradient`, `ModStore`?**
-  _High betweenness centrality (0.310) - this node is a cross-community bridge._
+- **Why does `ModManager` connect `ModManager` to `Lattice`, `.DrawCatalog`, `Category`, `.Postfix`, `GroupBy`, `ModStore`?**
+  _High betweenness centrality (0.300) - this node is a cross-community bridge._
 - **Why does `Lattice` connect `Lattice` to `.Draw`?**
-  _High betweenness centrality (0.112) - this node is a cross-community bridge._
-- **Why does `ModStore` connect `ModStore` to `Lattice`, `ModManager`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+  _High betweenness centrality (0.117) - this node is a cross-community bridge._
+- **Why does `UiStyle` connect `UiStyle` to `.IconCell`, `Lattice`, `.WithAlpha`, `.Ease`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **What connects `CellSize`, `InfoWidth`, `Columns` to the rest of the system?**
-  _44 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _50 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Lattice` be split into smaller, more focused modules?**
-  _Cohesion score 0.12755102040816327 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1284013605442177 - nodes in this community are weakly interconnected._
 - **Should `ArchitectGrid` be split into smaller, more focused modules?**
-  _Cohesion score 0.08258258258258258 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0931174089068826 - nodes in this community are weakly interconnected._
 - **Should `ModManager` be split into smaller, more focused modules?**
-  _Cohesion score 0.08828828828828829 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07901234567901234 - nodes in this community are weakly interconnected._

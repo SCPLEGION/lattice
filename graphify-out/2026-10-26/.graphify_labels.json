@@ -1,5 +1,5 @@
 {
-  "0": "UiStyle",
+  "0": ".IconCell",
   "1": "Lattice",
   "2": "ArchitectGrid",
   "3": "ModManager",
@@ -14,21 +14,18 @@
   "12": ".Chip",
   "13": "Lattice.csproj",
   "14": "GroupBy",
-  "15": "VerMode",
-  "16": ".IsResearch",
-  "17": ".DrawGradient",
+  "15": "UiStyle",
+  "16": "Patch_WindowsMovable",
+  "17": ".Ease",
   "18": "ModStore",
   "19": ".WithAlpha",
   "20": "LatticeSettings",
-  "21": "Rect",
+  "21": ".Prefix",
   "22": "Rect",
   "23": "Patch_MenuLanguageButton",
   "24": ".Postfix",
   "25": "Patch_ExpansionIcons",
   "26": ".Postfix",
   "27": ".MovedBy",
-  "28": ".Prefix",
-  "29": "Patch_MainMenuControls",
-  "30": "Rect",
-  "31": ".Prefix"
+  "28": "Patch_MainMenuControls"
 }

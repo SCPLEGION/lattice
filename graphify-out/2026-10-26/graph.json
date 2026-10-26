@@ -28,7 +28,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -38,25 +38,6 @@
       },
       "norm_label": "mainbuttonstyle",
       "source_file": "Source/BottomBar/MainButtonStyle.cs",
-      "source_location": "L9"
-    },
-    {
-      "id": "source_style_uistyle_lattice_uistyle",
-      "label": "UiStyle",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ]
-      },
-      "norm_label": "uistyle",
-      "source_file": "Source/Style/UiStyle.cs",
       "source_location": "L9"
     },
     {
@@ -76,7 +57,7 @@
       },
       "norm_label": "patch_architectposition",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L166"
+      "source_location": "L260"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_designationtabongui",
@@ -95,7 +76,7 @@
       },
       "norm_label": "patch_designationtabongui",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L267"
+      "source_location": "L387"
     },
     {
       "id": "source_inspect_inspectstyle_lattice_patch_inspectpaneongui",
@@ -233,24 +214,23 @@
       "source_location": "L20"
     },
     {
-      "id": "source_menus_modmanager_lattice_vermode",
-      "label": "VerMode",
+      "id": "source_style_uistyle_lattice_uistyle",
+      "label": "UiStyle",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "VerMode",
+      "community_name": "UiStyle",
       "file_type": "code",
       "metadata": {
-        "is_nested_type": true,
         "namespace": "Lattice",
         "scope_chain": [
-          "s134"
+          "s81"
         ]
       },
-      "norm_label": "vermode",
-      "source_file": "Source/Menus/ModManager.cs",
-      "source_location": "L19"
+      "norm_label": "uistyle",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L9"
     },
     {
       "id": "source_style_windowbehavior_lattice_patch_tabwindowscentered",
@@ -259,17 +239,17 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s67"
+          "s86"
         ]
       },
       "norm_label": "patch_tabwindowscentered",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L34"
+      "source_location": "L77"
     },
     {
       "id": "source_style_windowbehavior_lattice_patch_windowsmovable",
@@ -278,17 +258,17 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s67"
+          "s86"
         ]
       },
       "norm_label": "patch_windowsmovable",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L10"
+      "source_location": "L11"
     },
     {
       "id": "source_bills_billsstyle_lattice_patch_billdointerface",
@@ -297,7 +277,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -310,32 +290,13 @@
       "source_location": "L10"
     },
     {
-      "id": "source_menus_modsstyle_lattice_patch_modrow",
-      "label": "Patch_ModRow",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": ".DrawGradient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s101"
-        ]
-      },
-      "norm_label": "patch_modrow",
-      "source_file": "Source/Menus/ModsStyle.cs",
-      "source_location": "L11"
-    },
-    {
       "id": "source_menus_pagesstyle_lattice_patch_optionbackground",
       "label": "Patch_OptionBackground",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -348,13 +309,32 @@
       "source_location": "L26"
     },
     {
+      "id": "source_menus_pagesstyle_lattice_patch_pagetitle",
+      "label": "Patch_PageTitle",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".Ease",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s67"
+        ]
+      },
+      "norm_label": "patch_pagetitle",
+      "source_file": "Source/Menus/PagesStyle.cs",
+      "source_location": "L10"
+    },
+    {
       "id": "source_tabs_tabsstyle_lattice_patch_tabrecorddraw",
       "label": "Patch_TabRecordDraw",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -405,6 +385,25 @@
       "source_location": "L14"
     },
     {
+      "id": "source_bills_billsstyle_lattice_patch_billconfigcontents",
+      "label": "Patch_BillConfigContents",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s67"
+        ]
+      },
+      "norm_label": "patch_billconfigcontents",
+      "source_file": "Source/Bills/BillsStyle.cs",
+      "source_location": "L28"
+    },
+    {
       "id": "source_bottombar_dock_lattice_patch_dock",
       "label": "Patch_Dock",
       "_callable": true,
@@ -422,6 +421,44 @@
       "norm_label": "patch_dock",
       "source_file": "Source/BottomBar/Dock.cs",
       "source_location": "L12"
+    },
+    {
+      "id": "source_menus_modsstyle_lattice_patch_highlightselected",
+      "label": "Patch_HighlightSelected",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s101"
+        ]
+      },
+      "norm_label": "patch_highlightselected",
+      "source_file": "Source/Menus/ModsStyle.cs",
+      "source_location": "L45"
+    },
+    {
+      "id": "source_style_cornerstyle_lattice_patch_alertcard",
+      "label": "Patch_AlertCard",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s67"
+        ]
+      },
+      "norm_label": "patch_alertcard",
+      "source_file": "Source/Style/CornerStyle.cs",
+      "source_location": "L27"
     },
     {
       "id": "source_style_cornerstyle_lattice_patch_globalcontrolspanel",
@@ -535,7 +572,7 @@
       },
       "norm_label": "patch_architectextraongui",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L181"
+      "source_location": "L278"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_dowindowcontents",
@@ -554,7 +591,7 @@
       },
       "norm_label": "patch_dowindowcontents",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L190"
+      "source_location": "L287"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_inforect",
@@ -573,7 +610,7 @@
       },
       "norm_label": "patch_inforect",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L150"
+      "source_location": "L244"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_requestedtabsize",
@@ -592,7 +629,7 @@
       },
       "norm_label": "patch_requestedtabsize",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L160"
+      "source_location": "L254"
     },
     {
       "id": "source_style_icons_lattice_icons",
@@ -677,7 +714,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 21,
-      "community_name": "Rect",
+      "community_name": ".Prefix",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -690,32 +727,13 @@
       "source_location": "L60"
     },
     {
-      "id": "source_menus_modsstyle_lattice_patch_highlightselected",
-      "label": "Patch_HighlightSelected",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Rect",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s101"
-        ]
-      },
-      "norm_label": "patch_highlightselected",
-      "source_file": "Source/Menus/ModsStyle.cs",
-      "source_location": "L45"
-    },
-    {
       "id": "source_menus_modsstyle_lattice_patch_modinfo",
       "label": "Patch_ModInfo",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 21,
-      "community_name": "Rect",
+      "community_name": ".Prefix",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -726,6 +744,25 @@
       "norm_label": "patch_modinfo",
       "source_file": "Source/Menus/ModsStyle.cs",
       "source_location": "L30"
+    },
+    {
+      "id": "source_menus_modsstyle_lattice_patch_modrow",
+      "label": "Patch_ModRow",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": ".Prefix",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s101"
+        ]
+      },
+      "norm_label": "patch_modrow",
+      "source_file": "Source/Menus/ModsStyle.cs",
+      "source_location": "L11"
     },
     {
       "id": "source_tabs_tabsstyle_lattice_patch_altrect",
@@ -801,7 +838,7 @@
       },
       "norm_label": "patch_menulanguagebutton",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L232"
+      "source_location": "L234"
     },
     {
       "id": "source_colonistbar_colonistbarstyle_lattice_patch_drawcolonist",
@@ -858,7 +895,7 @@
       },
       "norm_label": "patch_expansionicons",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L209"
+      "source_location": "L211"
     },
     {
       "id": "source_alerts_alertsstyle_lattice_patch_alertdrawat",
@@ -899,31 +936,12 @@
       "source_location": "L5"
     },
     {
-      "id": "source_bills_billsstyle_lattice_patch_billconfigcontents",
-      "label": "Patch_BillConfigContents",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": ".Prefix",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s67"
-        ]
-      },
-      "norm_label": "patch_billconfigcontents",
-      "source_file": "Source/Bills/BillsStyle.cs",
-      "source_location": "L28"
-    },
-    {
       "id": "source_menus_mainmenustyle_lattice_patch_mainmenucontrols",
       "label": "Patch_MainMenuControls",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "community_name": "Patch_MainMenuControls",
       "file_type": "code",
       "metadata": {
@@ -934,7 +952,7 @@
       },
       "norm_label": "patch_mainmenucontrols",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L53"
+      "source_location": "L54"
     },
     {
       "id": "source_menus_modmanager_lattice_block",
@@ -995,42 +1013,24 @@
       "source_location": "L1238"
     },
     {
-      "id": "source_menus_pagesstyle_lattice_patch_pagetitle",
-      "label": "Patch_PageTitle",
+      "id": "source_menus_modmanager_lattice_vermode",
+      "label": "VerMode",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 30,
-      "community_name": "Rect",
+      "community": 3,
+      "community_name": "ModManager",
       "file_type": "code",
       "metadata": {
+        "is_nested_type": true,
         "namespace": "Lattice",
         "scope_chain": [
-          "s67"
+          "s134"
         ]
       },
-      "norm_label": "patch_pagetitle",
-      "source_file": "Source/Menus/PagesStyle.cs",
-      "source_location": "L10"
-    },
-    {
-      "id": "source_style_cornerstyle_lattice_patch_alertcard",
-      "label": "Patch_AlertCard",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": ".Prefix",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s67"
-        ]
-      },
-      "norm_label": "patch_alertcard",
-      "source_file": "Source/Style/CornerStyle.cs",
-      "source_location": "L27"
+      "norm_label": "vermode",
+      "source_file": "Source/Menus/ModManager.cs",
+      "source_location": "L19"
     },
     {
       "id": "source_menus_backdrops_lattice_backdrops",
@@ -1107,7 +1107,7 @@
       },
       "norm_label": "patch_menubackground",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L99"
+      "source_location": "L100"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_menulinksslab",
@@ -1126,7 +1126,7 @@
       },
       "norm_label": "patch_menulinksslab",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L225"
+      "source_location": "L227"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_menuoverlay",
@@ -1164,7 +1164,7 @@
       },
       "norm_label": "patch_optionlisting",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L138"
+      "source_location": "L140"
     },
     {
       "id": "source_style_windowpin_lattice_flags",
@@ -1421,7 +1421,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -1508,88 +1508,12 @@
       "source_location": "L14"
     },
     {
-      "id": "source_style_uistyle_lattice_uistyle_buildglow",
-      "label": ".BuildGlow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Clamp01",
-            "receiver_type": "Mathf",
-            "lang": "csharp",
-            "line": "L63"
-          },
-          {
-            "callee": "Sqrt",
-            "receiver_type": "Mathf",
-            "lang": "csharp",
-            "line": "L63"
-          },
-          {
-            "callee": "SetPixel",
-            "receiver_type": "Texture2D",
-            "lang": "csharp",
-            "line": "L64"
-          },
-          {
-            "callee": "Apply",
-            "receiver_type": "Texture2D",
-            "lang": "csharp",
-            "line": "L67"
-          }
-        ]
-      },
-      "norm_label": ".buildglow()",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L53"
-    },
-    {
-      "id": "source_style_uistyle_lattice_uistyle_buildgradient",
-      "label": ".BuildGradient()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "SetPixel",
-            "receiver_type": "Texture2D",
-            "lang": "csharp",
-            "line": "L47"
-          },
-          {
-            "callee": "Apply",
-            "receiver_type": "Texture2D",
-            "lang": "csharp",
-            "line": "L49"
-          }
-        ]
-      },
-      "norm_label": ".buildgradient()",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L41"
-    },
-    {
       "id": "source_style_uistyle_lattice_uistyle_drawaccentline",
       "label": ".DrawAccentLine()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -1601,13 +1525,13 @@
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L154"
+            "line": "L161"
           }
         ]
       },
       "norm_label": ".drawaccentline()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L144"
+      "source_location": "L151"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_drawglow",
@@ -1615,7 +1539,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -1627,19 +1551,19 @@
             "callee": "Clamp01",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L111"
+            "line": "L118"
           },
           {
             "callee": "DrawTexture",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L112"
+            "line": "L119"
           }
         ]
       },
       "norm_label": ".drawglow()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L105"
+      "source_location": "L112"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_drawvline",
@@ -1647,7 +1571,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -1659,13 +1583,13 @@
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L140"
+            "line": "L147"
           }
         ]
       },
       "norm_label": ".drawvline()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L138"
+      "source_location": "L145"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_iconcell",
@@ -1673,7 +1597,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -1685,93 +1609,67 @@
             "callee": "IsOver",
             "receiver_type": "Mouse",
             "lang": "csharp",
-            "line": "L162"
+            "line": "L169"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L166"
+            "line": "L173"
           },
           {
             "callee": "ExpandedBy",
             "receiver_type": "Rect",
             "lang": "csharp",
-            "line": "L173"
+            "line": "L180"
           },
           {
             "callee": "DrawBoxSolidWithOutline",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L175"
+            "line": "L182"
           },
           {
             "callee": "DrawTextureFitted",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L186"
+            "line": "L193"
           },
           {
             "callee": "MovedBy",
             "receiver_type": "Rect",
             "lang": "csharp",
-            "line": "L186"
+            "line": "L193"
           },
           {
             "callee": "Lerp",
             "receiver_type": "Color",
             "lang": "csharp",
-            "line": "L197"
+            "line": "L204"
           },
           {
             "callee": "Max",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L197"
+            "line": "L204"
           },
           {
             "callee": "Label",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L198"
+            "line": "L205"
           },
           {
             "callee": "ButtonInvisible",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L202"
+            "line": "L209"
           }
         ]
       },
       "norm_label": ".iconcell()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L158"
-    },
-    {
-      "id": "source_style_uistyle_lattice_uistyle_pulse",
-      "label": ".Pulse()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Sin",
-            "receiver_type": "Mathf",
-            "lang": "csharp",
-            "line": "L91"
-          }
-        ]
-      },
-      "norm_label": ".pulse()",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L91"
+      "source_location": "L165"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_smooth",
@@ -1779,7 +1677,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -1789,7 +1687,7 @@
       },
       "norm_label": ".smooth()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L89"
+      "source_location": "L96"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_architectposition_postfix",
@@ -1807,7 +1705,7 @@
       },
       "norm_label": ".postfix()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L169"
+      "source_location": "L263"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_designationtabongui_prefix",
@@ -1825,7 +1723,7 @@
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L270"
+      "source_location": "L390"
     },
     {
       "id": "source_inspect_inspectstyle_lattice_patch_inspectpaneongui_prefix",
@@ -1998,22 +1896,150 @@
       "source_location": "L1272"
     },
     {
+      "id": "source_style_uistyle_lattice_uistyle_buildglow",
+      "label": ".BuildGlow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Clamp01",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L65"
+          },
+          {
+            "callee": "Sqrt",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L65"
+          },
+          {
+            "callee": "SetPixel",
+            "receiver_type": "Texture2D",
+            "lang": "csharp",
+            "line": "L66"
+          },
+          {
+            "callee": "Apply",
+            "receiver_type": "Texture2D",
+            "lang": "csharp",
+            "line": "L69"
+          }
+        ]
+      },
+      "norm_label": ".buildglow()",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L55"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_buildgradient",
+      "label": ".BuildGradient()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "SetPixel",
+            "receiver_type": "Texture2D",
+            "lang": "csharp",
+            "line": "L49"
+          },
+          {
+            "callee": "Apply",
+            "receiver_type": "Texture2D",
+            "lang": "csharp",
+            "line": "L51"
+          }
+        ]
+      },
+      "norm_label": ".buildgradient()",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L43"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_pulse",
+      "label": ".Pulse()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Sin",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L98"
+          }
+        ]
+      },
+      "norm_label": ".pulse()",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L98"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_reset",
+      "label": ".Reset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Remove",
+            "receiver_type": "Dictionary",
+            "lang": "csharp",
+            "line": "L94"
+          }
+        ]
+      },
+      "norm_label": ".reset()",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L94"
+    },
+    {
       "id": "source_style_windowbehavior_lattice_patch_tabwindowscentered_postfix",
       "label": ".Postfix()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s67"
+          "s86"
         ]
       },
       "norm_label": ".postfix()",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L37"
+      "source_location": "L80"
     },
     {
       "id": "source_style_windowbehavior_lattice_patch_windowsmovable_isresearch",
@@ -2021,25 +2047,37 @@
       "_callable": true,
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s67"
+          "s86"
         ],
         "unresolved_calls": [
           {
             "callee": "GetType",
             "receiver_type": "Window",
             "lang": "csharp",
-            "line": "L15"
+            "line": "L25"
+          },
+          {
+            "callee": "TryGetValue",
+            "receiver_type": "Type, bool>",
+            "lang": "csharp",
+            "line": "L26"
+          },
+          {
+            "callee": "GetPatchInfo",
+            "receiver_type": "Harmony",
+            "lang": "csharp",
+            "line": "L42"
           }
         ]
       },
       "norm_label": ".isresearch()",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L15"
+      "source_location": "L19"
     },
     {
       "id": "source_style_windowbehavior_lattice_patch_windowsmovable_prefix",
@@ -2047,25 +2085,25 @@
       "_callable": true,
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s67"
+          "s86"
         ],
         "unresolved_calls": [
           {
             "callee": "GetType",
             "receiver_type": "Window",
             "lang": "csharp",
-            "line": "L23"
+            "line": "L66"
           }
         ]
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L17"
+      "source_location": "L60"
     },
     {
       "id": "source_bills_billsstyle_lattice_patch_billdointerface_prefix",
@@ -2073,7 +2111,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2105,7 +2143,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2117,55 +2155,55 @@
             "callee": "IsOver",
             "receiver_type": "Mouse",
             "lang": "csharp",
-            "line": "L72"
+            "line": "L73"
           },
           {
             "callee": "Label",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L76"
+            "line": "L77"
           },
           {
             "callee": "MovedBy",
             "receiver_type": "Rect",
             "lang": "csharp",
-            "line": "L76"
+            "line": "L77"
           },
           {
             "callee": "Lerp",
             "receiver_type": "Color",
             "lang": "csharp",
-            "line": "L77"
+            "line": "L78"
           },
           {
             "callee": "ButtonInvisible",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L81"
+            "line": "L82"
           },
           {
             "callee": "Add",
             "receiver_type": "List",
             "lang": "csharp",
-            "line": "L87"
+            "line": "L88"
           },
           {
             "callee": "SelectLanguage",
             "receiver_type": "LanguageDatabase",
             "lang": "csharp",
-            "line": "L89"
+            "line": "L90"
           },
           {
             "callee": "Save",
             "receiver_type": "Prefs",
             "lang": "csharp",
-            "line": "L90"
+            "line": "L91"
           }
         ]
       },
       "norm_label": ".postfix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L64"
+      "source_location": "L65"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_optionlisting_prefix",
@@ -2173,7 +2211,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2185,185 +2223,85 @@
             "callee": "BeginGroup",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L162"
+            "line": "L164"
           },
           {
             "callee": "GetType",
             "receiver_type": "ListableOption",
             "lang": "csharp",
-            "line": "L166"
+            "line": "L168"
           },
           {
             "callee": "DrawOption",
             "receiver_type": "ListableOption",
             "lang": "csharp",
-            "line": "L168"
+            "line": "L170"
           },
           {
             "callee": "Max",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L171"
+            "line": "L173"
           },
           {
             "callee": "IsOver",
             "receiver_type": "Mouse",
             "lang": "csharp",
-            "line": "L173"
+            "line": "L175"
           },
           {
             "callee": "DrawTexture",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L177"
+            "line": "L179"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L179"
+            "line": "L181"
           },
           {
             "callee": "Label",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L185"
+            "line": "L187"
           },
           {
             "callee": "MovedBy",
             "receiver_type": "Rect",
             "lang": "csharp",
-            "line": "L185"
+            "line": "L187"
           },
           {
             "callee": "Lerp",
             "receiver_type": "Color",
             "lang": "csharp",
-            "line": "L186"
+            "line": "L188"
           },
           {
             "callee": "HighlightOpportunity",
             "receiver_type": "UIHighlighter",
             "lang": "csharp",
-            "line": "L194"
+            "line": "L196"
           },
           {
             "callee": "ButtonInvisible",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L196"
+            "line": "L198"
           },
           {
             "callee": "EndGroup",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L202"
+            "line": "L204"
           }
         ]
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L159"
-    },
-    {
-      "id": "source_menus_modmanager_lattice_modmanager_drawsidebar",
-      "label": ".DrawSidebar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": ".DrawGradient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s134"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Label",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L787"
-          },
-          {
-            "callee": "DrawBoxSolid",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L789"
-          },
-          {
-            "callee": "GetValues",
-            "receiver_type": "Enum",
-            "lang": "csharp",
-            "line": "L792"
-          },
-          {
-            "callee": "Count",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L794"
-          },
-          {
-            "callee": "IsOver",
-            "receiver_type": "Mouse",
-            "lang": "csharp",
-            "line": "L797"
-          },
-          {
-            "callee": "Lerp",
-            "receiver_type": "Color",
-            "lang": "csharp",
-            "line": "L802"
-          },
-          {
-            "callee": "ButtonInvisible",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L809"
-          },
-          {
-            "callee": "DrawHighlightIfMouseover",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L835"
-          }
-        ]
-      },
-      "norm_label": ".drawsidebar()",
-      "source_file": "Source/Menus/ModManager.cs",
-      "source_location": "L783"
-    },
-    {
-      "id": "source_menus_modsstyle_lattice_patch_modrow_prefix",
-      "label": ".Prefix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": ".DrawGradient",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s101"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "IsOver",
-            "receiver_type": "Mouse",
-            "lang": "csharp",
-            "line": "L21"
-          },
-          {
-            "callee": "DrawBoxSolid",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L25"
-          }
-        ]
-      },
-      "norm_label": ".prefix()",
-      "source_file": "Source/Menus/ModsStyle.cs",
-      "source_location": "L14"
+      "source_location": "L161"
     },
     {
       "id": "source_menus_pagesstyle_lattice_patch_optionbackground_prefix",
@@ -2371,7 +2309,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2404,30 +2342,30 @@
       "source_location": "L29"
     },
     {
-      "id": "source_style_uistyle_lattice_uistyle_drawgradient",
-      "label": ".DrawGradient()",
+      "id": "source_menus_pagesstyle_lattice_patch_pagetitle_postfix",
+      "label": ".Postfix()",
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s81"
+          "s67"
         ],
         "unresolved_calls": [
           {
-            "callee": "DrawTexture",
-            "receiver_type": "GUI",
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L99"
+            "line": "L20"
           }
         ]
       },
-      "norm_label": ".drawgradient()",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L96"
+      "norm_label": ".postfix()",
+      "source_file": "Source/Menus/PagesStyle.cs",
+      "source_location": "L13"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_ease",
@@ -2435,7 +2373,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2447,25 +2385,25 @@
             "callee": "TryGetValue",
             "receiver_type": "Dictionary",
             "lang": "csharp",
-            "line": "L78"
+            "line": "L80"
           },
           {
             "callee": "MoveTowards",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L81"
+            "line": "L88"
           },
           {
             "callee": "Max",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L81"
+            "line": "L88"
           }
         ]
       },
       "norm_label": ".ease()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L76"
+      "source_location": "L78"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_key",
@@ -2473,7 +2411,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2485,19 +2423,19 @@
             "callee": "Combine",
             "receiver_type": "HashCode",
             "lang": "csharp",
-            "line": "L74"
+            "line": "L76"
           },
           {
             "callee": "RoundToInt",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L74"
+            "line": "L76"
           }
         ]
       },
       "norm_label": ".key()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L74"
+      "source_location": "L76"
     },
     {
       "id": "source_tabs_tabsstyle_lattice_patch_tabrecorddraw_prefix",
@@ -2505,7 +2443,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -2908,6 +2846,32 @@
       "source_location": "L99"
     },
     {
+      "id": "source_bills_billsstyle_lattice_patch_billconfigcontents_prefix",
+      "label": ".Prefix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s67"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L34"
+          }
+        ]
+      },
+      "norm_label": ".prefix()",
+      "source_file": "Source/Bills/BillsStyle.cs",
+      "source_location": "L31"
+    },
+    {
       "id": "source_bottombar_dock_lattice_patch_dock_prefix",
       "label": ".Prefix()",
       "_callable": true,
@@ -2946,6 +2910,58 @@
       "source_location": "L21"
     },
     {
+      "id": "source_menus_modsstyle_lattice_patch_highlightselected_prefix",
+      "label": ".Prefix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s101"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L55"
+          }
+        ]
+      },
+      "norm_label": ".prefix()",
+      "source_file": "Source/Menus/ModsStyle.cs",
+      "source_location": "L48"
+    },
+    {
+      "id": "source_style_cornerstyle_lattice_patch_alertcard_prefix",
+      "label": ".Prefix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s67"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L38"
+          }
+        ]
+      },
+      "norm_label": ".prefix()",
+      "source_file": "Source/Style/CornerStyle.cs",
+      "source_location": "L30"
+    },
+    {
       "id": "source_style_cornerstyle_lattice_patch_globalcontrolspanel_prefix",
       "label": ".Prefix()",
       "_callable": true,
@@ -2972,6 +2988,32 @@
       "source_location": "L13"
     },
     {
+      "id": "source_style_uistyle_lattice_uistyle_drawgradient",
+      "label": ".DrawGradient()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "DrawTexture",
+            "receiver_type": "GUI",
+            "lang": "csharp",
+            "line": "L106"
+          }
+        ]
+      },
+      "norm_label": ".drawgradient()",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L103"
+    },
+    {
       "id": "source_style_uistyle_lattice_uistyle_drawpanel",
       "label": ".DrawPanel()",
       "_callable": true,
@@ -2989,13 +3031,13 @@
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L134"
+            "line": "L141"
           }
         ]
       },
       "norm_label": ".drawpanel()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L127"
+      "source_location": "L134"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_drawshadow",
@@ -3015,19 +3057,19 @@
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L123"
+            "line": "L130"
           },
           {
             "callee": "ExpandedBy",
             "receiver_type": "Rect",
             "lang": "csharp",
-            "line": "L123"
+            "line": "L130"
           }
         ]
       },
       "norm_label": ".drawshadow()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L117"
+      "source_location": "L124"
     },
     {
       "id": "source_style_uistyle_lattice_uistyle_withalpha",
@@ -3045,7 +3087,7 @@
       },
       "norm_label": ".withalpha()",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L93"
+      "source_location": "L100"
     },
     {
       "id": "source_style_windowstyle_lattice_patch_drawmenusection_prefix",
@@ -3110,6 +3152,32 @@
       "source_location": "L26"
     },
     {
+      "id": "source_architect_architectwindow_lattice_architectgrid_barrect",
+      "label": ".BarRect()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "ArchitectGrid",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s139"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Min",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L66"
+          }
+        ]
+      },
+      "norm_label": ".barrect()",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L64"
+    },
+    {
       "id": "source_architect_architectwindow_lattice_architectgrid_categoryicon",
       "label": ".CategoryIcon()",
       "_callable": true,
@@ -3126,6 +3194,92 @@
       "norm_label": ".categoryicon()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
       "source_location": "L28"
+    },
+    {
+      "id": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "label": ".DrawBar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "ArchitectGrid",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s139"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L76"
+          },
+          {
+            "callee": "DrawTexture",
+            "receiver_type": "GUI",
+            "lang": "csharp",
+            "line": "L80"
+          },
+          {
+            "callee": "Label",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L83"
+          },
+          {
+            "callee": "DrawBoxSolidWithOutline",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L94"
+          },
+          {
+            "callee": "IsOver",
+            "receiver_type": "Mouse",
+            "lang": "csharp",
+            "line": "L94"
+          },
+          {
+            "callee": "ButtonInvisible",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L98"
+          },
+          {
+            "callee": "Contains",
+            "receiver_type": "Rect",
+            "lang": "csharp",
+            "line": "L107"
+          },
+          {
+            "callee": "BeginScrollView",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L112"
+          },
+          {
+            "callee": "TipRegion",
+            "receiver_type": "TooltipHandler",
+            "lang": "csharp",
+            "line": "L122"
+          },
+          {
+            "callee": "ProcessInput",
+            "receiver_type": "Designator",
+            "lang": "csharp",
+            "line": "L126"
+          },
+          {
+            "callee": "EndScrollView",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L130"
+          }
+        ]
+      },
+      "norm_label": ".drawbar()",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L70"
     },
     {
       "id": "source_architect_architectwindow_lattice_architectgrid_drawcategoryrow",
@@ -3145,49 +3299,49 @@
             "callee": "IsOver",
             "receiver_type": "Mouse",
             "lang": "csharp",
-            "line": "L122"
+            "line": "L216"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L126"
+            "line": "L220"
           },
           {
             "callee": "DrawTexture",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L132"
+            "line": "L226"
           },
           {
             "callee": "Label",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L135"
+            "line": "L229"
           },
           {
             "callee": "DoRegion",
             "receiver_type": "MouseoverSounds",
             "lang": "csharp",
-            "line": "L138"
+            "line": "L232"
           },
           {
             "callee": "ButtonInvisible",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L139"
+            "line": "L233"
           },
           {
             "callee": "HighlightOpportunity",
             "receiver_type": "UIHighlighter",
             "lang": "csharp",
-            "line": "L145"
+            "line": "L239"
           }
         ]
       },
       "norm_label": ".drawcategoryrow()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L119"
+      "source_location": "L213"
     },
     {
       "id": "source_architect_architectwindow_lattice_architectgrid_drawgrid",
@@ -3207,61 +3361,61 @@
             "callee": "Max",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L59"
+            "line": "L153"
           },
           {
             "callee": "FloorToInt",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L59"
+            "line": "L153"
           },
           {
             "callee": "CeilToInt",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L60"
+            "line": "L154"
           },
           {
             "callee": "BeginScrollView",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L65"
+            "line": "L159"
           },
           {
             "callee": "IsOver",
             "receiver_type": "Mouse",
             "lang": "csharp",
-            "line": "L73"
+            "line": "L167"
           },
           {
             "callee": "ProcessInput",
             "receiver_type": "Designator",
             "lang": "csharp",
-            "line": "L79"
+            "line": "L173"
           },
           {
             "callee": "TipRegion",
             "receiver_type": "TooltipHandler",
             "lang": "csharp",
-            "line": "L84"
+            "line": "L178"
           },
           {
             "callee": "EndScrollView",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L87"
+            "line": "L181"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L93"
+            "line": "L187"
           }
         ]
       },
       "norm_label": ".drawgrid()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L48"
+      "source_location": "L142"
     },
     {
       "id": "source_architect_architectwindow_lattice_architectgrid_drawinfo",
@@ -3281,37 +3435,37 @@
             "callee": "BeginGroup",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L103"
+            "line": "L197"
           },
           {
             "callee": "Label",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L106"
+            "line": "L200"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L108"
+            "line": "L202"
           },
           {
             "callee": "DrawPanelReadout",
             "receiver_type": "Designator",
             "lang": "csharp",
-            "line": "L111"
+            "line": "L205"
           },
           {
             "callee": "EndGroup",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L116"
+            "line": "L210"
           }
         ]
       },
       "norm_label": ".drawinfo()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L101"
+      "source_location": "L195"
     },
     {
       "id": "source_architect_architectwindow_lattice_architectgrid_matchessearch",
@@ -3331,13 +3485,31 @@
             "callee": "Matches",
             "receiver_type": "QuickSearchFilter",
             "lang": "csharp",
-            "line": "L45"
+            "line": "L139"
           }
         ]
       },
       "norm_label": ".matchessearch()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L42"
+      "source_location": "L136"
+    },
+    {
+      "id": "source_architect_architectwindow_lattice_architectgrid_wantsbar",
+      "label": ".WantsBar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "ArchitectGrid",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s139"
+        ]
+      },
+      "norm_label": ".wantsbar()",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L50"
     },
     {
       "id": "source_architect_architectwindow_lattice_architectgrid_windowsize",
@@ -3393,7 +3565,7 @@
       },
       "norm_label": ".postfix()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L184"
+      "source_location": "L281"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_dowindowcontents_prefix",
@@ -3413,49 +3585,49 @@
             "callee": "Close",
             "receiver_type": "MainTabWindow_Architect",
             "lang": "csharp",
-            "line": "L218"
+            "line": "L338"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L225"
+            "line": "L345"
           },
           {
             "callee": "BeginScrollView",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L228"
+            "line": "L348"
           },
           {
             "callee": "Invoke",
             "receiver_type": "MethodInfo",
             "lang": "csharp",
-            "line": "L233"
+            "line": "L353"
           },
           {
             "callee": "EndScrollView",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L235"
+            "line": "L355"
           },
           {
             "callee": "OnGUI",
             "receiver_type": "QuickSearchWidget",
             "lang": "csharp",
-            "line": "L240"
+            "line": "L360"
           },
           {
             "callee": "Label",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L247"
+            "line": "L367"
           }
         ]
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L202"
+      "source_location": "L299"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_inforect_postfix",
@@ -3473,7 +3645,7 @@
       },
       "norm_label": ".postfix()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L154"
+      "source_location": "L248"
     },
     {
       "id": "source_architect_architectwindow_lattice_patch_requestedtabsize_postfix",
@@ -3491,7 +3663,7 @@
       },
       "norm_label": ".postfix()",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L163"
+      "source_location": "L257"
     },
     {
       "id": "source_style_icons_lattice_icons_for",
@@ -3544,32 +3716,6 @@
       "source_location": "L17"
     },
     {
-      "id": "source_style_uistyle_lattice_uistyle_reset",
-      "label": ".Reset()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "ArchitectGrid",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "Remove",
-            "receiver_type": "Dictionary",
-            "lang": "csharp",
-            "line": "L87"
-          }
-        ]
-      },
-      "norm_label": ".reset()",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L87"
-    },
-    {
       "id": "source_mod_lattice_latticemod_dosettingswindowcontents",
       "label": ".DoSettingsWindowContents()",
       "_callable": true,
@@ -3606,6 +3752,198 @@
       "source_location": "L18"
     },
     {
+      "id": "source_settings_latticesettings_lattice_latticesettings_doappearance",
+      "label": ".DoAppearance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s33"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Label",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L78"
+          },
+          {
+            "callee": "GetRect",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L79"
+          },
+          {
+            "callee": "Abs",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L84"
+          },
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L85"
+          },
+          {
+            "callee": "DrawBoxSolidWithOutline",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L88"
+          },
+          {
+            "callee": "ExpandedBy",
+            "receiver_type": "Rect",
+            "lang": "csharp",
+            "line": "L88"
+          },
+          {
+            "callee": "TipRegion",
+            "receiver_type": "TooltipHandler",
+            "lang": "csharp",
+            "line": "L90"
+          },
+          {
+            "callee": "ButtonInvisible",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L91"
+          },
+          {
+            "callee": "Slider",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L100"
+          },
+          {
+            "callee": "Round",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L106"
+          },
+          {
+            "callee": "CheckboxLabeled",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L107"
+          }
+        ]
+      },
+      "norm_label": ".doappearance()",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L75"
+    },
+    {
+      "id": "source_settings_latticesettings_lattice_latticesettings_doarchitect",
+      "label": ".DoArchitect()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s33"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Label",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L123"
+          },
+          {
+            "callee": "RoundToInt",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L124"
+          },
+          {
+            "callee": "Slider",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L124"
+          },
+          {
+            "callee": "Round",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L126"
+          },
+          {
+            "callee": "CheckboxLabeled",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L127"
+          }
+        ]
+      },
+      "norm_label": ".doarchitect()",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L120"
+    },
+    {
+      "id": "source_settings_latticesettings_lattice_latticesettings_domenu",
+      "label": ".DoMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s33"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Label",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L134"
+          },
+          {
+            "callee": "Round",
+            "receiver_type": "Mathf",
+            "lang": "csharp",
+            "line": "L135"
+          },
+          {
+            "callee": "Slider",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L135"
+          },
+          {
+            "callee": "CheckboxLabeled",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L136"
+          },
+          {
+            "callee": "ButtonText",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L139"
+          },
+          {
+            "callee": "Add",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L154"
+          }
+        ]
+      },
+      "norm_label": ".domenu()",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L131"
+    },
+    {
       "id": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
       "label": ".DoWindowContents()",
       "_callable": true,
@@ -3620,76 +3958,72 @@
         ],
         "unresolved_calls": [
           {
+            "callee": "BeginScrollView",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L190"
+          },
+          {
             "callee": "Begin",
             "receiver_type": "Listing_Standard",
             "lang": "csharp",
-            "line": "L38"
-          },
-          {
-            "callee": "Label",
-            "receiver_type": "Listing_Standard",
-            "lang": "csharp",
-            "line": "L39"
-          },
-          {
-            "callee": "RoundToInt",
-            "receiver_type": "Mathf",
-            "lang": "csharp",
-            "line": "L40"
-          },
-          {
-            "callee": "Slider",
-            "receiver_type": "Listing_Standard",
-            "lang": "csharp",
-            "line": "L40"
-          },
-          {
-            "callee": "Round",
-            "receiver_type": "Mathf",
-            "lang": "csharp",
-            "line": "L42"
-          },
-          {
-            "callee": "CheckboxLabeled",
-            "receiver_type": "Listing_Standard",
-            "lang": "csharp",
-            "line": "L43"
-          },
-          {
-            "callee": "GapLine",
-            "receiver_type": "Listing_Standard",
-            "lang": "csharp",
-            "line": "L49"
-          },
-          {
-            "callee": "ButtonText",
-            "receiver_type": "Listing_Standard",
-            "lang": "csharp",
-            "line": "L51"
-          },
-          {
-            "callee": "Add",
-            "receiver_type": "List",
-            "lang": "csharp",
-            "line": "L68"
+            "line": "L192"
           },
           {
             "callee": "Gap",
             "receiver_type": "Listing_Standard",
             "lang": "csharp",
-            "line": "L77"
+            "line": "L197"
+          },
+          {
+            "callee": "ButtonText",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L198"
           },
           {
             "callee": "End",
             "receiver_type": "Listing_Standard",
             "lang": "csharp",
-            "line": "L91"
+            "line": "L203"
+          },
+          {
+            "callee": "EndScrollView",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L204"
           }
         ]
       },
       "norm_label": ".dowindowcontents()",
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L35"
+      "source_location": "L187"
+    },
+    {
+      "id": "source_settings_latticesettings_lattice_latticesettings_dowindows",
+      "label": ".DoWindows()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s33"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "CheckboxLabeled",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L114"
+          }
+        ]
+      },
+      "norm_label": ".dowindows()",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L111"
     },
     {
       "id": "source_settings_latticesettings_lattice_latticesettings_exposedata",
@@ -3709,13 +4043,75 @@
             "callee": "Look",
             "receiver_type": "Scribe_Values",
             "lang": "csharp",
-            "line": "L23"
+            "line": "L32"
           }
         ]
       },
       "norm_label": ".exposedata()",
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L21"
+      "source_location": "L30"
+    },
+    {
+      "id": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "label": ".Heading()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s33"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Gap",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L66"
+          },
+          {
+            "callee": "GetRect",
+            "receiver_type": "Listing_Standard",
+            "lang": "csharp",
+            "line": "L67"
+          },
+          {
+            "callee": "Label",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L69"
+          },
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L71"
+          }
+        ]
+      },
+      "norm_label": ".heading()",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L64"
+    },
+    {
+      "id": "source_settings_latticesettings_lattice_latticesettings_resetall",
+      "label": ".ResetAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s33"
+        ]
+      },
+      "norm_label": ".resetall()",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L164"
     },
     {
       "id": "source_menus_modsstyle_lattice_patch_highlightmouseover_prefix",
@@ -3723,7 +4119,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 21,
-      "community_name": "Rect",
+      "community_name": ".Prefix",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -3750,38 +4146,12 @@
       "source_location": "L63"
     },
     {
-      "id": "source_menus_modsstyle_lattice_patch_highlightselected_prefix",
-      "label": ".Prefix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Rect",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s101"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "DrawBoxSolid",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L55"
-          }
-        ]
-      },
-      "norm_label": ".prefix()",
-      "source_file": "Source/Menus/ModsStyle.cs",
-      "source_location": "L48"
-    },
-    {
       "id": "source_menus_modsstyle_lattice_patch_modinfo_prefix",
       "label": ".Prefix()",
       "_callable": true,
       "_origin": "ast",
       "community": 21,
-      "community_name": "Rect",
+      "community_name": ".Prefix",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
@@ -3800,6 +4170,38 @@
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/ModsStyle.cs",
       "source_location": "L33"
+    },
+    {
+      "id": "source_menus_modsstyle_lattice_patch_modrow_prefix",
+      "label": ".Prefix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": ".Prefix",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s101"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "IsOver",
+            "receiver_type": "Mouse",
+            "lang": "csharp",
+            "line": "L21"
+          },
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L25"
+          }
+        ]
+      },
+      "norm_label": ".prefix()",
+      "source_file": "Source/Menus/ModsStyle.cs",
+      "source_location": "L14"
     },
     {
       "id": "source_tabs_tabsstyle_lattice_patch_altrect_prefix",
@@ -3895,7 +4297,7 @@
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L247"
+      "source_location": "L249"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_menulanguagebutton_targetmethods",
@@ -3915,13 +4317,13 @@
             "callee": "GetDeclaredMethods",
             "receiver_type": "AccessTools",
             "lang": "csharp",
-            "line": "L237"
+            "line": "L239"
           }
         ]
       },
       "norm_label": ".targetmethods()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L235"
+      "source_location": "L237"
     },
     {
       "id": "source_colonistbar_colonistbarstyle_lattice_patch_drawcolonist_prefix",
@@ -3997,7 +4399,7 @@
       },
       "norm_label": ".finalizer()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L221"
+      "source_location": "L223"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_expansionicons_prefix",
@@ -4017,19 +4419,19 @@
             "callee": "Translate",
             "receiver_type": "Matrix4x4",
             "lang": "csharp",
-            "line": "L217"
+            "line": "L219"
           },
           {
             "callee": "Scale",
             "receiver_type": "Matrix4x4",
             "lang": "csharp",
-            "line": "L218"
+            "line": "L220"
           }
         ]
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L214"
+      "source_location": "L216"
     },
     {
       "id": "source_alerts_alertsstyle_lattice_patch_alertdrawat_postfix",
@@ -4076,37 +4478,11 @@
       "source_location": "L7"
     },
     {
-      "id": "source_bills_billsstyle_lattice_patch_billconfigcontents_prefix",
-      "label": ".Prefix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": ".Prefix",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s67"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "DrawBoxSolid",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L34"
-          }
-        ]
-      },
-      "norm_label": ".prefix()",
-      "source_file": "Source/Bills/BillsStyle.cs",
-      "source_location": "L31"
-    },
-    {
       "id": "source_menus_mainmenustyle_lattice_patch_mainmenucontrols_finalizer",
       "label": ".Finalizer()",
       "_callable": true,
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "community_name": "Patch_MainMenuControls",
       "file_type": "code",
       "metadata": {
@@ -4117,14 +4493,14 @@
       },
       "norm_label": ".finalizer()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L61"
+      "source_location": "L62"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_mainmenucontrols_prefix",
       "label": ".Prefix()",
       "_callable": true,
       "_origin": "ast",
-      "community": 29,
+      "community": 28,
       "community_name": "Patch_MainMenuControls",
       "file_type": "code",
       "metadata": {
@@ -4135,7 +4511,7 @@
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L59"
+      "source_location": "L60"
     },
     {
       "id": "source_menus_modmanager_lattice_modmanager_activedependents",
@@ -4936,6 +5312,74 @@
       "norm_label": ".drawrow()",
       "source_file": "Source/Menus/ModManager.cs",
       "source_location": "L1158"
+    },
+    {
+      "id": "source_menus_modmanager_lattice_modmanager_drawsidebar",
+      "label": ".DrawSidebar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ModManager",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s134"
+        ],
+        "unresolved_calls": [
+          {
+            "callee": "Label",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L787"
+          },
+          {
+            "callee": "DrawBoxSolid",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L789"
+          },
+          {
+            "callee": "GetValues",
+            "receiver_type": "Enum",
+            "lang": "csharp",
+            "line": "L792"
+          },
+          {
+            "callee": "Count",
+            "receiver_type": "List",
+            "lang": "csharp",
+            "line": "L794"
+          },
+          {
+            "callee": "IsOver",
+            "receiver_type": "Mouse",
+            "lang": "csharp",
+            "line": "L797"
+          },
+          {
+            "callee": "Lerp",
+            "receiver_type": "Color",
+            "lang": "csharp",
+            "line": "L802"
+          },
+          {
+            "callee": "ButtonInvisible",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L809"
+          },
+          {
+            "callee": "DrawHighlightIfMouseover",
+            "receiver_type": "Widgets",
+            "lang": "csharp",
+            "line": "L835"
+          }
+        ]
+      },
+      "norm_label": ".drawsidebar()",
+      "source_file": "Source/Menus/ModManager.cs",
+      "source_location": "L783"
     },
     {
       "id": "source_menus_modmanager_lattice_modmanager_drawstar",
@@ -6042,58 +6486,6 @@
       "source_location": "L112"
     },
     {
-      "id": "source_menus_pagesstyle_lattice_patch_pagetitle_postfix",
-      "label": ".Postfix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 30,
-      "community_name": "Rect",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s67"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "DrawBoxSolid",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L20"
-          }
-        ]
-      },
-      "norm_label": ".postfix()",
-      "source_file": "Source/Menus/PagesStyle.cs",
-      "source_location": "L13"
-    },
-    {
-      "id": "source_style_cornerstyle_lattice_patch_alertcard_prefix",
-      "label": ".Prefix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": ".Prefix",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s67"
-        ],
-        "unresolved_calls": [
-          {
-            "callee": "DrawBoxSolid",
-            "receiver_type": "Widgets",
-            "lang": "csharp",
-            "line": "L38"
-          }
-        ]
-      },
-      "norm_label": ".prefix()",
-      "source_file": "Source/Style/CornerStyle.cs",
-      "source_location": "L30"
-    },
-    {
       "id": "source_menus_backdrops_lattice_backdrops_all",
       "label": ".All()",
       "_callable": true,
@@ -6401,43 +6793,43 @@
             "callee": "MoveTowards",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L118"
+            "line": "L119"
           },
           {
             "callee": "Max",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L123"
+            "line": "L124"
           },
           {
             "callee": "Sin",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L124"
+            "line": "L126"
           },
           {
             "callee": "Cos",
             "receiver_type": "Mathf",
             "lang": "csharp",
-            "line": "L127"
+            "line": "L129"
           },
           {
             "callee": "DrawBoxSolid",
             "receiver_type": "Widgets",
             "lang": "csharp",
-            "line": "L128"
+            "line": "L130"
           },
           {
             "callee": "DrawTexture",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L130"
+            "line": "L132"
           }
         ]
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L105"
+      "source_location": "L106"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_menulinksslab_prefix",
@@ -6455,7 +6847,7 @@
       },
       "norm_label": ".prefix()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L228"
+      "source_location": "L230"
     },
     {
       "id": "source_menus_mainmenustyle_lattice_patch_menuoverlay_draw",
@@ -6475,13 +6867,13 @@
             "callee": "DrawTextureWithTexCoords",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L44"
+            "line": "L45"
           },
           {
             "callee": "DrawTexture",
             "receiver_type": "GUI",
             "lang": "csharp",
-            "line": "L46"
+            "line": "L47"
           }
         ]
       },
@@ -6525,19 +6917,19 @@
             "callee": "SetPixel",
             "receiver_type": "Texture2D",
             "lang": "csharp",
-            "line": "L152"
+            "line": "L154"
           },
           {
             "callee": "Apply",
             "receiver_type": "Texture2D",
             "lang": "csharp",
-            "line": "L154"
+            "line": "L156"
           }
         ]
       },
       "norm_label": ".ramp()",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L147"
+      "source_location": "L149"
     },
     {
       "id": "source_style_windowpin_lattice_patch_pinchip_postfix",
@@ -7204,7 +7596,7 @@
       "label": "MainButtonWorker",
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "norm_label": "mainbuttonworker",
       "source_file": "",
@@ -7215,7 +7607,7 @@
       "label": "Rect",
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "norm_label": "rect",
       "source_file": "",
@@ -7226,20 +7618,9 @@
       "label": "Color",
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "norm_label": "color",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "source_style_uistyle_cs_dictionary",
-      "label": "Dictionary",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "norm_label": "dictionary",
       "source_file": "",
       "source_location": ""
     },
@@ -7248,7 +7629,7 @@
       "label": "Rect",
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "norm_label": "rect",
       "source_file": "",
@@ -7259,20 +7640,9 @@
       "label": "Texture",
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "norm_label": "texture",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "source_style_uistyle_cs_texture2d",
-      "label": "Texture2D",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "norm_label": "texture2d",
       "source_file": "",
       "source_location": ""
     },
@@ -7281,45 +7651,11 @@
       "label": "Vector2",
       "_origin": "ast",
       "community": 0,
-      "community_name": "UiStyle",
+      "community_name": ".IconCell",
       "file_type": "code",
       "norm_label": "vector2",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "source_style_uistyle_lattice_uistyle_glow",
-      "label": "Glow",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ]
-      },
-      "norm_label": "glow",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L39"
-    },
-    {
-      "id": "source_style_uistyle_lattice_uistyle_gradient",
-      "label": "Gradient",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "UiStyle",
-      "file_type": "code",
-      "metadata": {
-        "namespace": "Lattice",
-        "scope_chain": [
-          "s81"
-        ]
-      },
-      "norm_label": "gradient",
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L38"
     },
     {
       "id": "csharp_namespace:03f923bd0dff40d4",
@@ -7922,79 +8258,169 @@
       "source_location": "L20"
     },
     {
-      "id": "source_menus_modmanager_lattice_vermode_atleast",
-      "label": "AtLeast",
+      "id": "source_style_uistyle_cs_dictionary",
+      "label": "Dictionary",
       "_origin": "ast",
       "community": 15,
-      "community_name": "VerMode",
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "norm_label": "dictionary",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "source_style_uistyle_cs_texture2d",
+      "label": "Texture2D",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "norm_label": "texture2d",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_accent",
+      "label": "Accent",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s134"
+          "s81"
         ]
       },
-      "norm_label": "atleast",
-      "source_file": "Source/Menus/ModManager.cs",
+      "norm_label": "accent",
+      "source_file": "Source/Style/UiStyle.cs",
       "source_location": "L19"
     },
     {
-      "id": "source_menus_modmanager_lattice_vermode_below",
-      "label": "Below",
+      "id": "source_style_uistyle_lattice_uistyle_accentglow",
+      "label": "AccentGlow",
       "_origin": "ast",
       "community": 15,
-      "community_name": "VerMode",
+      "community_name": "UiStyle",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s134"
+          "s81"
         ]
       },
-      "norm_label": "below",
-      "source_file": "Source/Menus/ModManager.cs",
-      "source_location": "L19"
+      "norm_label": "accentglow",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L20"
     },
     {
-      "id": "source_menus_modmanager_lattice_vermode_excludes",
-      "label": "Excludes",
+      "id": "source_style_uistyle_lattice_uistyle_glow",
+      "label": "Glow",
       "_origin": "ast",
       "community": 15,
-      "community_name": "VerMode",
+      "community_name": "UiStyle",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s134"
+          "s81"
         ]
       },
-      "norm_label": "excludes",
-      "source_file": "Source/Menus/ModManager.cs",
-      "source_location": "L19"
+      "norm_label": "glow",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L41"
     },
     {
-      "id": "source_menus_modmanager_lattice_vermode_supports",
-      "label": "Supports",
+      "id": "source_style_uistyle_lattice_uistyle_gradient",
+      "label": "Gradient",
       "_origin": "ast",
       "community": 15,
-      "community_name": "VerMode",
+      "community_name": "UiStyle",
       "file_type": "code",
       "metadata": {
         "namespace": "Lattice",
         "scope_chain": [
-          "s134"
+          "s81"
         ]
       },
-      "norm_label": "supports",
-      "source_file": "Source/Menus/ModManager.cs",
-      "source_location": "L19"
+      "norm_label": "gradient",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L40"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_panelbg",
+      "label": "PanelBg",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ]
+      },
+      "norm_label": "panelbg",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L16"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_panelbottom",
+      "label": "PanelBottom",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ]
+      },
+      "norm_label": "panelbottom",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L15"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_panelopacity",
+      "label": "PanelOpacity",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ]
+      },
+      "norm_label": "panelopacity",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L13"
+    },
+    {
+      "id": "source_style_uistyle_lattice_uistyle_paneltop",
+      "label": "PanelTop",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "UiStyle",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s81"
+        ]
+      },
+      "norm_label": "paneltop",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L14"
     },
     {
       "id": "source_style_windowbehavior_cs_maintabwindow",
       "label": "MainTabWindow",
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "norm_label": "maintabwindow",
       "source_file": "",
@@ -8005,9 +8431,20 @@
       "label": "Window",
       "_origin": "ast",
       "community": 16,
-      "community_name": ".IsResearch",
+      "community_name": "Patch_WindowsMovable",
       "file_type": "code",
       "norm_label": "window",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "type_bool_gt",
+      "label": "Type, bool&gt;",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "Patch_WindowsMovable",
+      "file_type": "code",
+      "norm_label": "type, bool&gt;",
       "source_file": "",
       "source_location": ""
     },
@@ -8016,7 +8453,7 @@
       "label": "List",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "norm_label": "list",
       "source_file": "",
@@ -8027,20 +8464,20 @@
       "label": "Rect",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "norm_label": "rect",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "source_menus_modsstyle_cs_modmetadata",
-      "label": "ModMetaData",
+      "id": "source_menus_pagesstyle_cs_rect",
+      "label": "Rect",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
-      "norm_label": "modmetadata",
+      "norm_label": "rect",
       "source_file": "",
       "source_location": ""
     },
@@ -8049,7 +8486,7 @@
       "label": "FieldRef",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "norm_label": "fieldref",
       "source_file": "",
@@ -8060,7 +8497,7 @@
       "label": "TabRecord",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".DrawGradient",
+      "community_name": ".Ease",
       "file_type": "code",
       "norm_label": "tabrecord",
       "source_file": "",
@@ -8150,6 +8587,17 @@
       "source_location": ""
     },
     {
+      "id": "source_bills_billsstyle_cs_rect",
+      "label": "Rect",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "norm_label": "rect",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "source_bottombar_dock_cs_fieldref",
       "label": "FieldRef",
       "_origin": "ast",
@@ -8157,6 +8605,17 @@
       "community_name": ".WithAlpha",
       "file_type": "code",
       "norm_label": "fieldref",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "source_style_cornerstyle_cs_alert",
+      "label": "Alert",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".WithAlpha",
+      "file_type": "code",
+      "norm_label": "alert",
       "source_file": "",
       "source_location": ""
     },
@@ -8410,6 +8869,17 @@
       "source_location": ""
     },
     {
+      "id": "listing_standard",
+      "label": "Listing_Standard",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "norm_label": "listing_standard",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "mod",
       "label": "Mod",
       "_origin": "ast",
@@ -8443,6 +8913,17 @@
       "source_location": ""
     },
     {
+      "id": "source_settings_latticesettings_cs_color",
+      "label": "Color",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "norm_label": "color",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "source_settings_latticesettings_cs_rect",
       "label": "Rect",
       "_origin": "ast",
@@ -8450,6 +8931,17 @@
       "community_name": "LatticeSettings",
       "file_type": "code",
       "norm_label": "rect",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "source_settings_latticesettings_cs_vector2",
+      "label": "Vector2",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "LatticeSettings",
+      "file_type": "code",
+      "norm_label": "vector2",
       "source_file": "",
       "source_location": ""
     },
@@ -8505,11 +8997,22 @@
       "source_location": "L6"
     },
     {
+      "id": "source_menus_modsstyle_cs_modmetadata",
+      "label": "ModMetaData",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": ".Prefix",
+      "file_type": "code",
+      "norm_label": "modmetadata",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "source_menus_modsstyle_cs_rect",
       "label": "Rect",
       "_origin": "ast",
       "community": 21,
-      "community_name": "Rect",
+      "community_name": ".Prefix",
       "file_type": "code",
       "norm_label": "rect",
       "source_file": "",
@@ -8622,17 +9125,6 @@
       "community_name": ".MovedBy",
       "file_type": "code",
       "norm_label": "vector2",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "source_bills_billsstyle_cs_rect",
-      "label": "Rect",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": ".Prefix",
-      "file_type": "code",
-      "norm_label": "rect",
       "source_file": "",
       "source_location": ""
     },
@@ -8831,6 +9323,74 @@
       "source_location": "L19"
     },
     {
+      "id": "source_menus_modmanager_lattice_vermode_atleast",
+      "label": "AtLeast",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ModManager",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s134"
+        ]
+      },
+      "norm_label": "atleast",
+      "source_file": "Source/Menus/ModManager.cs",
+      "source_location": "L19"
+    },
+    {
+      "id": "source_menus_modmanager_lattice_vermode_below",
+      "label": "Below",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ModManager",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s134"
+        ]
+      },
+      "norm_label": "below",
+      "source_file": "Source/Menus/ModManager.cs",
+      "source_location": "L19"
+    },
+    {
+      "id": "source_menus_modmanager_lattice_vermode_excludes",
+      "label": "Excludes",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ModManager",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s134"
+        ]
+      },
+      "norm_label": "excludes",
+      "source_file": "Source/Menus/ModManager.cs",
+      "source_location": "L19"
+    },
+    {
+      "id": "source_menus_modmanager_lattice_vermode_supports",
+      "label": "Supports",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ModManager",
+      "file_type": "code",
+      "metadata": {
+        "namespace": "Lattice",
+        "scope_chain": [
+          "s134"
+        ]
+      },
+      "norm_label": "supports",
+      "source_file": "Source/Menus/ModManager.cs",
+      "source_location": "L19"
+    },
+    {
       "id": "source_menus_modmanagerstore_cs_ienumerable",
       "label": "IEnumerable",
       "_origin": "ast",
@@ -8860,28 +9420,6 @@
       "community_name": "ModManager",
       "file_type": "code",
       "norm_label": "version",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "source_menus_pagesstyle_cs_rect",
-      "label": "Rect",
-      "_origin": "ast",
-      "community": 30,
-      "community_name": "Rect",
-      "file_type": "code",
-      "norm_label": "rect",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "source_style_cornerstyle_cs_alert",
-      "label": "Alert",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": ".Prefix",
-      "file_type": "code",
-      "norm_label": "alert",
       "source_file": "",
       "source_location": ""
     },
@@ -9022,7 +9560,7 @@
       },
       "norm_label": "fade",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L143"
+      "source_location": "L145"
     },
     {
       "id": "flags",
@@ -9725,6 +10263,54 @@
       "weight": 1.0
     },
     {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "source_architect_architectwindow_lattice_architectgrid_matchessearch",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "source_style_icons_lattice_icons_for",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "source_style_uistyle_lattice_uistyle_iconcell",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "source_architect_architectwindow_lattice_architectgrid_categoryicon",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
       "source": "source_architect_architectwindow_lattice_architectgrid_drawcategoryrow",
       "target": "source_style_uistyle_lattice_uistyle_ease",
       "relation": "calls",
@@ -9733,7 +10319,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L123",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -9745,7 +10331,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L123",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -9757,7 +10343,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L125",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -9769,7 +10355,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L126",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -9781,7 +10367,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L127",
+      "source_location": "L221",
       "weight": 1.0
     },
     {
@@ -9793,7 +10379,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L55",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -9805,7 +10391,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L57",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -9817,7 +10403,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L57",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -9829,7 +10415,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L70",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -9841,7 +10427,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L71",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -9853,7 +10439,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L71",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -9865,7 +10451,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L96",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_patch_dowindowcontents_prefix",
+      "target": "source_architect_architectwindow_lattice_architectgrid_wantsbar",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_patch_dowindowcontents_prefix",
+      "target": "source_architect_architectwindow_lattice_architectgrid_barrect",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L313",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_patch_dowindowcontents_prefix",
+      "target": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -9877,7 +10499,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L233",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -9889,7 +10511,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L256",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -9901,7 +10523,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L163",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -10297,7 +10919,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -10309,7 +10931,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -10321,7 +10943,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L107",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -10333,7 +10955,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L108",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -10345,7 +10967,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L129",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -10357,7 +10979,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L132",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -10369,7 +10991,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -10393,7 +11015,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L174",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -10405,7 +11027,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L174",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -10417,7 +11039,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L179",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -12485,7 +13107,43 @@
       "weight": 1.0
     },
     {
-      "source": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
+      "source": "source_settings_latticesettings_lattice_latticesettings_doappearance",
+      "target": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_doarchitect",
+      "target": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_domenu",
+      "target": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_domenu",
       "target": "source_menus_backdrops_lattice_backdrops_all",
       "relation": "calls",
       "_origin": "ast",
@@ -12493,7 +13151,79 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L65",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
+      "target": "source_settings_latticesettings_lattice_latticesettings_doappearance",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
+      "target": "source_settings_latticesettings_lattice_latticesettings_dowindows",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
+      "target": "source_settings_latticesettings_lattice_latticesettings_doarchitect",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
+      "target": "source_settings_latticesettings_lattice_latticesettings_domenu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindowcontents",
+      "target": "source_settings_latticesettings_lattice_latticesettings_resetall",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindows",
+      "target": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L113",
       "weight": 1.0
     },
     {
@@ -12649,7 +13379,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L150",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -12661,7 +13391,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L153",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -12673,7 +13403,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L154",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -12685,7 +13415,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L111",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -12697,7 +13427,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L131",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -12709,7 +13439,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L133",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -12721,7 +13451,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L133",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -12733,7 +13463,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L123",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -12745,7 +13475,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L161",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -12757,7 +13487,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L163",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -12769,7 +13499,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L163",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -12781,7 +13511,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L169",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -12793,7 +13523,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L169",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -12805,7 +13535,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L173",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -12817,7 +13547,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L178",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -12829,7 +13559,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L39",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -12841,7 +13571,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L23",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -13110,7 +13840,7 @@
         "ref_qualifier": "AccessTools"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L39",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -13127,7 +13857,7 @@
         "ref_qualifier": "AccessTools"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L197",
+      "source_location": "L294",
       "weight": 1.0
     },
     {
@@ -13195,7 +13925,7 @@
         "ref_qualifier": "AccessTools"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L157",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -13233,6 +13963,23 @@
       "weight": 1.0
     },
     {
+      "source": "source_style_windowbehavior_lattice_patch_windowsmovable",
+      "target": "type_bool_gt",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Type, bool&gt;",
+        "qualified": true,
+        "ref_qualifier": "System.Collections.Generic.Dictionary&lt;System"
+      },
+      "source_file": "Source/Style/WindowBehavior.cs",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
       "source": "source_architect_architectwindow_lattice_patch_dowindowcontents",
       "target": "source_architect_architectwindow_cs_methodinfo",
       "relation": "references",
@@ -13246,7 +13993,7 @@
         "ref_qualifier": "System.Reflection"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L200",
+      "source_location": "L297",
       "weight": 1.0
     },
     {
@@ -13340,7 +14087,7 @@
         "ref_token": "BackdropMode"
       },
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -13374,6 +14121,21 @@
       "weight": 1.0
     },
     {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_cs_color",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Color"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
       "source": "source_style_uistyle_lattice_uistyle",
       "target": "source_style_uistyle_cs_color",
       "relation": "references",
@@ -13385,7 +14147,7 @@
         "ref_token": "Color"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -13416,6 +14178,21 @@
       },
       "source_file": "Source/Menus/Backdrops.cs",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid",
+      "target": "source_architect_architectwindow_cs_designator",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Designator"
+      },
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -13460,7 +14237,7 @@
         "ref_token": "Dictionary"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L72",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -13640,7 +14417,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L23",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -13700,7 +14477,7 @@
         "ref_token": "Texture2D"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L144",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -13715,7 +14492,7 @@
         "ref_token": "Texture2D"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -13730,7 +14507,7 @@
         "ref_token": "Vector2"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L24",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -13745,7 +14522,7 @@
         "ref_token": "Vector2"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L262",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -13791,6 +14568,21 @@
       },
       "source_file": "Source/Menus/ModManagerStore.cs",
       "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_cs_vector2",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Vector2"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -13877,7 +14669,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L143",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -13930,6 +14722,78 @@
     },
     {
       "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_panelopacity",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_paneltop",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_panelbottom",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_panelbg",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_accent",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_accentglow",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
       "target": "source_style_uistyle_lattice_uistyle_gradient",
       "relation": "defines",
       "_origin": "ast",
@@ -13937,7 +14801,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -13949,7 +14813,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -14099,7 +14963,7 @@
         "ref_token": "MethodBase"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L235",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -14630,7 +15494,7 @@
         "scope_kind": "file"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -14953,7 +15817,7 @@
         "scope_kind": "file"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -15399,6 +16263,23 @@
       "weight": 1.0
     },
     {
+      "source": "source_style_windowbehavior",
+      "target": "system_linq",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "metadata": {
+        "using_kind": "namespace",
+        "target_fqn": "System.Linq",
+        "scope_kind": "file"
+      },
+      "source_file": "Source/Style/WindowBehavior.cs",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "source_menus_mainmenustyle",
       "target": "system_reflection",
       "relation": "imports",
@@ -15803,7 +16684,7 @@
         "scope_kind": "file"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -16211,7 +17092,7 @@
         "scope_kind": "file"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -16330,7 +17211,7 @@
         "ref_qualifier": "System"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L119",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -16347,7 +17228,7 @@
         "ref_qualifier": "System.Collections.Generic"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L159",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -16381,6 +17262,21 @@
       "weight": 1.0
     },
     {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "architectcategorytab",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "ArchitectCategoryTab"
+      },
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
       "source": "source_architect_architectwindow_lattice_architectgrid_drawcategoryrow",
       "target": "architectcategorytab",
       "relation": "references",
@@ -16392,7 +17288,7 @@
         "ref_token": "ArchitectCategoryTab"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L119",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -16407,7 +17303,22 @@
         "ref_token": "ArchitectCategoryTab"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L48",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid_wantsbar",
+      "target": "architectcategorytab",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "ArchitectCategoryTab"
+      },
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -16527,7 +17438,7 @@
         "ref_token": "Color"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L105",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -16542,7 +17453,7 @@
         "ref_token": "Color"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L96",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -16557,7 +17468,7 @@
         "ref_token": "Color"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L158",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -16606,6 +17517,21 @@
       "weight": 1.0
     },
     {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "source_architect_architectwindow_cs_designator",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Designator"
+      },
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
       "source": "source_architect_architectwindow_lattice_architectgrid_drawgrid",
       "target": "source_architect_architectwindow_cs_designator",
       "relation": "references",
@@ -16617,7 +17543,7 @@
         "ref_token": "Designator"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L48",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -16632,7 +17558,7 @@
         "ref_token": "Designator"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L101",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -16647,7 +17573,7 @@
         "ref_token": "Designator"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L42",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -16816,6 +17742,81 @@
       "weight": 1.0
     },
     {
+      "source": "source_settings_latticesettings_lattice_latticesettings_doappearance",
+      "target": "listing_standard",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Listing_Standard"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_doarchitect",
+      "target": "listing_standard",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Listing_Standard"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_domenu",
+      "target": "listing_standard",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Listing_Standard"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_dowindows",
+      "target": "listing_standard",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Listing_Standard"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "target": "listing_standard",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Listing_Standard"
+      },
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
       "source": "source_bottombar_mainbuttonstyle_lattice_mainbuttonstyle_prefix",
       "target": "mainbuttonworker",
       "relation": "references",
@@ -16857,7 +17858,7 @@
         "ref_token": "MainTabWindow"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L169",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -16872,7 +17873,7 @@
         "ref_token": "MainTabWindow"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L37",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -16887,7 +17888,7 @@
         "ref_token": "MainTabWindow_Architect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L184",
+      "source_location": "L281",
       "weight": 1.0
     },
     {
@@ -16902,7 +17903,7 @@
         "ref_token": "MainTabWindow_Architect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L202",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -16917,7 +17918,7 @@
         "ref_token": "Matrix4x4"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L221",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -16932,7 +17933,7 @@
         "ref_token": "Matrix4x4"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L214",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -17521,6 +18522,21 @@
       "weight": 1.0
     },
     {
+      "source": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "target": "source_architect_architectwindow_cs_rect",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "Rect"
+      },
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
       "source": "source_architect_architectwindow_lattice_architectgrid_drawcategoryrow",
       "target": "source_architect_architectwindow_cs_rect",
       "relation": "references",
@@ -17532,7 +18548,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L119",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -17547,7 +18563,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L48",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -17562,7 +18578,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L101",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -17577,7 +18593,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L202",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -17592,7 +18608,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L154",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -17712,7 +18728,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L159",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -18027,7 +19043,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L35",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -18087,7 +19103,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L144",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -18102,7 +19118,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L105",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -18117,7 +19133,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L96",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -18132,7 +19148,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L127",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -18147,7 +19163,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L117",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -18162,7 +19178,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L158",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -18177,7 +19193,7 @@
         "ref_token": "Rect"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L74",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -18357,7 +19373,7 @@
         "ref_token": "Texture"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L158",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -18372,7 +19388,7 @@
         "ref_token": "Texture2D"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L228",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -18387,7 +19403,7 @@
         "ref_token": "Vector2"
       },
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L163",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -18432,7 +19448,7 @@
         "ref_token": "Vector2"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L158",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -18522,7 +19538,7 @@
         "ref_token": "Window"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L15",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -18537,7 +19553,7 @@
         "ref_token": "Window"
       },
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L17",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -18702,7 +19718,7 @@
         "ref_token": "Color"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L93",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -18732,7 +19748,7 @@
         "ref_token": "IEnumerable"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L235",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -18871,6 +19887,21 @@
       "weight": 1.0
     },
     {
+      "source": "source_architect_architectwindow_lattice_architectgrid_barrect",
+      "target": "source_architect_architectwindow_cs_rect",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Rect"
+      },
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
       "source": "source_menus_modmanager_lattice_patch_modsviewswitch_chip",
       "target": "source_menus_modmanager_cs_rect",
       "relation": "references",
@@ -18972,7 +20003,7 @@
         "ref_token": "Texture2D"
       },
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L147",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -18987,7 +20018,7 @@
         "ref_token": "Texture2D"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -19002,7 +20033,7 @@
         "ref_token": "Texture2D"
       },
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -19414,7 +20445,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L150",
+      "source_location": "L244",
       "weight": 1.0
     },
     {
@@ -19425,7 +20456,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L160",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -19436,7 +20467,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L166",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -19447,7 +20478,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L181",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -19458,7 +20489,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L190",
+      "source_location": "L287",
       "weight": 1.0
     },
     {
@@ -19469,7 +20500,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L267",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -19716,6 +20747,17 @@
     },
     {
       "source": "source_menus_mainmenustyle",
+      "target": "source_menus_mainmenustyle_lattice_patch_menubackground",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Menus/MainMenuStyle.cs",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "source_menus_mainmenustyle",
       "target": "source_menus_mainmenustyle_lattice_patch_menuoverlay",
       "relation": "contains",
       "_origin": "ast",
@@ -19733,7 +20775,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L138",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -19744,7 +20786,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L209",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -19755,7 +20797,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L225",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -19766,7 +20808,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L232",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -19777,7 +20819,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -19789,17 +20831,6 @@
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
       "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "source_menus_mainmenustyle",
-      "target": "source_menus_mainmenustyle_lattice_patch_menubackground",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -20261,18 +21292,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_windowbehavior",
-      "target": "source_style_windowbehavior_lattice_patch_tabwindowscentered",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L34",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -20283,7 +21303,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L6",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_windowbehavior",
+      "target": "source_style_windowbehavior_lattice_patch_tabwindowscentered",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/WindowBehavior.cs",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -20474,13 +21505,35 @@
     },
     {
       "source": "source_architect_architectwindow_lattice_architectgrid",
+      "target": "source_architect_architectwindow_lattice_architectgrid_matchessearch",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid",
+      "target": "source_architect_architectwindow_lattice_architectgrid_drawgrid",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid",
       "target": "source_architect_architectwindow_lattice_architectgrid_drawinfo",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L101",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -20491,7 +21544,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L119",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -20518,24 +21571,35 @@
     },
     {
       "source": "source_architect_architectwindow_lattice_architectgrid",
-      "target": "source_architect_architectwindow_lattice_architectgrid_matchessearch",
+      "target": "source_architect_architectwindow_lattice_architectgrid_wantsbar",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L42",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
       "source": "source_architect_architectwindow_lattice_architectgrid",
-      "target": "source_architect_architectwindow_lattice_architectgrid_drawgrid",
+      "target": "source_architect_architectwindow_lattice_architectgrid_barrect",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L48",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_architect_architectwindow_lattice_architectgrid",
+      "target": "source_architect_architectwindow_lattice_architectgrid_drawbar",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Architect/ArchitectWindow.cs",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -20546,7 +21610,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L184",
+      "source_location": "L281",
       "weight": 1.0
     },
     {
@@ -20557,7 +21621,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L169",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -20568,7 +21632,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L270",
+      "source_location": "L390",
       "weight": 1.0
     },
     {
@@ -20579,7 +21643,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L202",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -20590,7 +21654,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L154",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -20601,7 +21665,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Architect/ArchitectWindow.cs",
-      "source_location": "L163",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -20832,7 +21896,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L214",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -20843,7 +21907,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L221",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -20854,7 +21918,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -20865,7 +21929,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -20876,7 +21940,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -20887,7 +21951,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -20898,7 +21962,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L235",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -20909,7 +21973,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L247",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -20920,7 +21984,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L228",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -20953,7 +22017,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L147",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -20964,7 +22028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Menus/MainMenuStyle.cs",
-      "source_location": "L159",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -21849,13 +22913,46 @@
     },
     {
       "source": "source_settings_latticesettings_lattice_latticesettings",
-      "target": "source_settings_latticesettings_lattice_latticesettings_exposedata",
+      "target": "source_settings_latticesettings_lattice_latticesettings_dowindows",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L21",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_lattice_latticesettings_doarchitect",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_lattice_latticesettings_domenu",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_lattice_latticesettings_resetall",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -21866,7 +22963,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Settings/LatticeSettings.cs",
-      "source_location": "L35",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_lattice_latticesettings_exposedata",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_lattice_latticesettings_heading",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_settings_latticesettings_lattice_latticesettings",
+      "target": "source_settings_latticesettings_lattice_latticesettings_doappearance",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Settings/LatticeSettings.cs",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -21948,156 +23078,13 @@
     },
     {
       "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_drawglow",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L105",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_drawshadow",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L117",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_drawpanel",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L127",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_drawvline",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L138",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_drawaccentline",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L144",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_iconcell",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L158",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_buildgradient",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_buildglow",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_key",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L74",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_ease",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L76",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_reset",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L87",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_smooth",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L89",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
-      "target": "source_style_uistyle_lattice_uistyle_pulse",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L91",
-      "weight": 1.0
-    },
-    {
-      "source": "source_style_uistyle_lattice_uistyle",
       "target": "source_style_uistyle_lattice_uistyle_withalpha",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/UiStyle.cs",
-      "source_location": "L93",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -22108,7 +23095,150 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_drawglow",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_drawshadow",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_drawpanel",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_drawvline",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_drawaccentline",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_iconcell",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_buildgradient",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_buildglow",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_key",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_ease",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_reset",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_smooth",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
       "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "source_style_uistyle_lattice_uistyle",
+      "target": "source_style_uistyle_lattice_uistyle_pulse",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Source/Style/UiStyle.cs",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -22119,7 +23249,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L37",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -22130,7 +23260,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L15",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -22141,7 +23271,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "Source/Style/WindowBehavior.cs",
-      "source_location": "L17",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -22559,5 +23689,5 @@
       "source_file": "README.md"
     }
   ],
-  "built_at_commit": "b8e88f73c8c27287175d928a038105bbcb6e9382"
+  "built_at_commit": "13596edcf1e798ba69a10145f4e19ef796024d87"
 }
