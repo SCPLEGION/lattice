@@ -195,7 +195,7 @@ public class LatticeSettings : ModSettings
 		{
 			ResetAll();
 		}
-		contentHeight = list.CurrentHeight + 20f;
+		contentHeight = list.CurHeight + 20f;
 		list.End();
 		Widgets.EndScrollView();
 	}
