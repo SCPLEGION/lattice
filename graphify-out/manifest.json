@@ -1,0 +1,164 @@
+{
+  "Source/Alerts/AlertsStyle.cs": {
+    "mtime": 1792997562.0577126,
+    "seen": 1793002198.6083982,
+    "ast_hash": "2a9af5f044cb2a108d1d114943e85b2c",
+    "semantic_hash": "2a9af5f044cb2a108d1d114943e85b2c"
+  },
+  "Source/Architect/ArchitectWindow.cs": {
+    "mtime": 1792997562.0577126,
+    "seen": 1793002198.6084058,
+    "ast_hash": "b3343b465c79c31975f51849cf57223f",
+    "semantic_hash": "b3343b465c79c31975f51849cf57223f"
+  },
+  "Source/Bills/BillsStyle.cs": {
+    "mtime": 1792997562.0577126,
+    "seen": 1793002198.60841,
+    "ast_hash": "f01e8f907f0270aab4db4308a8007cf9",
+    "semantic_hash": "f01e8f907f0270aab4db4308a8007cf9"
+  },
+  "Source/Bills/BillsTab.cs": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084125,
+    "ast_hash": "8789417e9d4a623f6e3d0f2b93a16ec4",
+    "semantic_hash": "8789417e9d4a623f6e3d0f2b93a16ec4"
+  },
+  "Source/BottomBar/Dock.cs": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084151,
+    "ast_hash": "b02d2e9f0265e3fe021aadc47df3c978",
+    "semantic_hash": "b02d2e9f0265e3fe021aadc47df3c978"
+  },
+  "Source/BottomBar/MainButtonStyle.cs": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084177,
+    "ast_hash": "c32acbdce974e9301bd86f70c7770b02",
+    "semantic_hash": "c32acbdce974e9301bd86f70c7770b02"
+  },
+  "Source/ColonistBar/ColonistBarStyle.cs": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084206,
+    "ast_hash": "a1cb0d1b20dbb4069b6cb8b9d3035466",
+    "semantic_hash": "a1cb0d1b20dbb4069b6cb8b9d3035466"
+  },
+  "Source/Inspect/InspectStyle.cs": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084232,
+    "ast_hash": "4413263558ef81020e576e3156f99198",
+    "semantic_hash": "4413263558ef81020e576e3156f99198"
+  },
+  "Source/Lattice.csproj": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084256,
+    "ast_hash": "b60631c969388d33105faee63471f031",
+    "semantic_hash": "b60631c969388d33105faee63471f031"
+  },
+  "Source/Menus/Backdrops.cs": {
+    "mtime": 1792997562.0589583,
+    "seen": 1793002198.6084282,
+    "ast_hash": "7d4474b2ffdd14ef0f7a2b0090b6fc9d",
+    "semantic_hash": "7d4474b2ffdd14ef0f7a2b0090b6fc9d"
+  },
+  "Source/Menus/MainMenuStyle.cs": {
+    "mtime": 1793004832.3499758,
+    "seen": 1793004839.6846583,
+    "ast_hash": "44813c396bd6690e9c7dc7bcdb23ec11",
+    "semantic_hash": ""
+  },
+  "Source/Menus/ModManager.cs": {
+    "mtime": 1793008166.2806473,
+    "seen": 1793008174.5589468,
+    "ast_hash": "987a69514483766468146bc51ffd6ca0",
+    "semantic_hash": ""
+  },
+  "Source/Menus/ModsStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.608436,
+    "ast_hash": "5110dcc8003fb57c2f9d3875b402612c",
+    "semantic_hash": "5110dcc8003fb57c2f9d3875b402612c"
+  },
+  "Source/Menus/PagesStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084387,
+    "ast_hash": "0138467d489411017cb383eb258716ba",
+    "semantic_hash": "0138467d489411017cb383eb258716ba"
+  },
+  "Source/Mod.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084416,
+    "ast_hash": "d69226a13eb7c4ab52235c1993f609a7",
+    "semantic_hash": "d69226a13eb7c4ab52235c1993f609a7"
+  },
+  "Source/Settings/LatticeSettings.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084442,
+    "ast_hash": "adb2e6f4b6368c92bbde7168c6ca0c9e",
+    "semantic_hash": "adb2e6f4b6368c92bbde7168c6ca0c9e"
+  },
+  "Source/Style/ButtonStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084468,
+    "ast_hash": "3ab3850bd8d2536c7d9d6277de03307c",
+    "semantic_hash": "3ab3850bd8d2536c7d9d6277de03307c"
+  },
+  "Source/Style/CornerStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.608449,
+    "ast_hash": "8378c881717bfd8e5502ff9f60361491",
+    "semantic_hash": "8378c881717bfd8e5502ff9f60361491"
+  },
+  "Source/Style/Icons.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084516,
+    "ast_hash": "417fec300fc67128088ca99015e60db2",
+    "semantic_hash": "417fec300fc67128088ca99015e60db2"
+  },
+  "Source/Style/RectExt.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084542,
+    "ast_hash": "dd1a06f9ef0ac45da2a946010e8568ec",
+    "semantic_hash": "dd1a06f9ef0ac45da2a946010e8568ec"
+  },
+  "Source/Style/UiStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084569,
+    "ast_hash": "34e806704f6f6bb298fba819de34661b",
+    "semantic_hash": "34e806704f6f6bb298fba819de34661b"
+  },
+  "Source/Style/WindowBehavior.cs": {
+    "mtime": 1793008665.5268373,
+    "seen": 1793008675.413719,
+    "ast_hash": "1307781b389e103dbfe70fce843c5bd4",
+    "semantic_hash": ""
+  },
+  "Source/Style/WindowPin.cs": {
+    "mtime": 1793002282.8827384,
+    "seen": 1793002291.9232457,
+    "ast_hash": "465a815af1fab3598a1e218794d62f6d",
+    "semantic_hash": ""
+  },
+  "Source/Style/WindowStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.608465,
+    "ast_hash": "83a3cb6fd9abc7a8e9efd5f0ef968e55",
+    "semantic_hash": "83a3cb6fd9abc7a8e9efd5f0ef968e55"
+  },
+  "Source/Tabs/TabsStyle.cs": {
+    "mtime": 1792997562.0594237,
+    "seen": 1793002198.6084673,
+    "ast_hash": "d671ee6c2624e2fa398d6ddfdf3c0073",
+    "semantic_hash": "d671ee6c2624e2fa398d6ddfdf3c0073"
+  },
+  "README.md": {
+    "mtime": 1792997562.0577126,
+    "seen": 1793002198.60847,
+    "ast_hash": "df5872ea314ae81cbf5d2b572b360a2c",
+    "semantic_hash": "df5872ea314ae81cbf5d2b572b360a2c"
+  },
+  "Source/Menus/ModManagerStore.cs": {
+    "mtime": 1793005426.291141,
+    "seen": 1793007871.8775446,
+    "ast_hash": "8fa47b89cd9d1efe5ab6b59dfc4a9051",
+    "semantic_hash": ""
+  }
+}

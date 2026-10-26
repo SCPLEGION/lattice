@@ -2,3 +2,4 @@ bin/
 obj/
 1.7/Assemblies/
 .serena/
+/graphify-out/cache
