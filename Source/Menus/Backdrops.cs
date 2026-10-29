@@ -25,8 +25,6 @@ public static class Backdrops
 	public static string Dir => Path.Combine(GenFilePaths.ConfigFolderPath, "Lattice", "Backdrops");
 
 	private static List<Entry> entries;
-	private static Texture2D tex;
-	private static string texPath;
 
 	public static IReadOnlyList<Entry> All()
 	{
@@ -88,37 +86,66 @@ public static class Backdrops
 		return s.backdropMode == BackdropMode.MostPlayed ? all.OrderByDescending(e => e.playHours).First() : all.OrderByDescending(e => e.saved).First();
 	}
 
-	public static Texture2D Texture(Entry e)
+	// One loaded texture per use (menu background, continue-card thumbnail), so showing two different images never
+	// makes them evict each other every frame. The path is remembered even when loading failed, so a broken file is
+	// tried once, not every frame.
+	private class Slot
 	{
-		if (e == null)
+		public string path;
+		public Texture2D tex;
+
+		public Texture2D Get(string image)
 		{
-			return null;
-		}
-		if (tex != null && texPath == e.image)
-		{
+			if (path == image)
+			{
+				return tex;
+			}
+			Free();
+			path = image;
+			try
+			{
+				Texture2D loaded = new Texture2D(2, 2, TextureFormat.RGB24, false) { wrapMode = TextureWrapMode.Clamp, filterMode = FilterMode.Bilinear };
+				if (ImageConversion.LoadImage(loaded, File.ReadAllBytes(image)))
+				{
+					tex = loaded;
+				}
+				else
+				{
+					UnityEngine.Object.Destroy(loaded);
+				}
+			}
+			catch (Exception ex)
+			{
+				Log.Warning("[Lattice] Could not load backdrop " + image + ": " + ex.Message);
+			}
 			return tex;
 		}
-		try
+
+		public void Free()
 		{
-			Texture2D loaded = new Texture2D(2, 2, TextureFormat.RGB24, false) { wrapMode = TextureWrapMode.Clamp, filterMode = FilterMode.Bilinear };
-			if (!ImageConversion.LoadImage(loaded, File.ReadAllBytes(e.image)))
-			{
-				return null;
-			}
 			if (tex != null)
 			{
 				UnityEngine.Object.Destroy(tex);
 			}
-			tex = loaded;
-			texPath = e.image;
-		}
-		catch (Exception ex)
-		{
-			Log.Warning("[Lattice] Could not load backdrop " + e.image + ": " + ex.Message);
-			texPath = e.image;
 			tex = null;
+			path = null;
 		}
-		return tex;
+	}
+
+	private static readonly Slot main = new Slot();
+	private static readonly Slot thumb = new Slot();
+
+	public static Texture2D Texture(Entry e) => e == null ? null : main.Get(e.image);
+
+	// Same image as the background: share it instead of loading it twice.
+	public static Texture2D Thumbnail(Entry e) => e == null ? null : e.image == main.path ? main.tex : thumb.Get(e.image);
+
+	public static string SafeName(string saveName) => string.Concat(saveName.Select(c => Path.GetInvalidFileNameChars().Contains(c) ? '_' : c));
+
+	public static Entry ForSave(string saveName)
+	{
+		string safe = SafeName(saveName);
+		return All().FirstOrDefault(e => e.name == safe);
 	}
 
 	// Must run on the main thread (called from the game component's update).
@@ -145,7 +172,7 @@ public static class Backdrops
 			RenderTexture.active = prevActive;
 			RenderTexture.ReleaseTemporary(rt);
 
-			string safe = string.Concat(saveName.Select(c => Path.GetInvalidFileNameChars().Contains(c) ? '_' : c));
+			string safe = SafeName(saveName);
 			string image = Path.Combine(Dir, safe + ".jpg");
 			File.WriteAllBytes(image, ImageConversion.EncodeToJPG(shot, 88));
 			UnityEngine.Object.Destroy(shot);
@@ -153,6 +180,15 @@ public static class Backdrops
 			float hours = Find.GameInfo.RealPlayTimeInteracting / 3600f;
 			File.WriteAllText(Path.ChangeExtension(image, ".txt"), $"colony={colony}\nhours={hours.ToString(System.Globalization.CultureInfo.InvariantCulture)}\n");
 			entries = null;
+			// The file under this path changed: drop the loaded copies so the menu reloads it.
+			if (main.path == image)
+			{
+				main.Free();
+			}
+			if (thumb.path == image)
+			{
+				thumb.Free();
+			}
 		}
 		catch (Exception ex)
 		{

@@ -6,13 +6,13 @@ A RimWorld 1.7 UI overhaul in one dark, glassy style with a gold accent: clean i
 
 - **Centered icon dock** – the bottom bar becomes a compact dock of icons (names and hotkeys in tooltips).
 - **Architect window** – the hammer button opens a floating window: categories on the left, icon + name grid in the middle, info panel on the right, search on top. It is still the vanilla architect underneath, so hotkeys, selected category and designator state keep working. Grids are built from live defs, so modded buildings and tabs appear automatically.
-- **Cinematic main menu** – the background is a screenshot of your colony (latest save, most played, or one you pick), with a slow camera drift, vignette and tall menu rows. A screenshot of the map (no UI) is taken after every save.
+- **Cinematic main menu** – the background is a screenshot of your colony (latest save, most played, or one you pick) with a slow camera drift and a dark falloff on the left. The game title, a **Continue** card for your latest save (thumbnail, colony, play time, how long ago; one click loads it) and large bare options that slide in sit in one column; DLC icons, web links, language and version live in a quiet bottom bar. Options added by other mods still show up. A screenshot of the map (no UI) is taken after every save.
 - **Bills tab** – searchable one-click grid of everything a work table can make, current bills as cards next to it.
 - **Everywhere else** – buttons, windows, menu sections, tab strips, table rows, list highlights, option cards (scenario, storyteller...), page titles, the mods screen (cards with state edges), colonist bar, alerts and inspect pane.
 
 ## Settings
 
-Options → Mod settings → **Lattice**: architect columns, cell size and info panel, the dock on/off, restyling of vanilla widgets on/off (turn it off if another UI mod conflicts), and the main menu background mode.
+Options → Mod settings → **Lattice**: architect columns, cell size and info panel, the dock on/off, restyling of vanilla widgets on/off (turn it off if another UI mod conflicts; it also turns the cinematic menu off), and the main menu: cinematic layout on/off, the Continue card, shade, drift, capitals and background mode.
 
 Backdrops are stored in the game's config folder under `Lattice/Backdrops/` (`<save>.jpg` plus a small `<save>.txt`). You can drop your own JPGs there too.
 

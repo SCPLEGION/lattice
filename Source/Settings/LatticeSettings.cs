@@ -1,3 +1,4 @@
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -24,30 +25,37 @@ public class LatticeSettings : ModSettings
 	public float menuDim = 1f;
 	public bool kenBurns = true;
 	public bool menuUppercase = true;
+	public bool cinematicMenu = true;
+	public bool menuContinue = true;
 	private Vector2 scroll;
 	private float contentHeight = 1400f;
 
+	// The field initializers above are the single source of defaults; saving and Reset read them from here.
+	private static readonly LatticeSettings Defaults = new LatticeSettings();
+
 	public override void ExposeData()
 	{
-		Scribe_Values.Look(ref columns, "columns", 8);
-		Scribe_Values.Look(ref cellSize, "cellSize", 84f);
-		Scribe_Values.Look(ref showInfoPanel, "showInfoPanel", true);
-		Scribe_Values.Look(ref compactArchitect, "compactArchitect", true);
-		Scribe_Values.Look(ref dock, "dock", true);
-		Scribe_Values.Look(ref restyleWidgets, "restyleWidgets", true);
-		Scribe_Values.Look(ref movableWindows, "movableWindows", true);
-		Scribe_Values.Look(ref centerWindows, "centerWindows", true);
-		Scribe_Values.Look(ref pinWindows, "pinWindows", true);
-		Scribe_Values.Look(ref backdropMode, "backdropMode", BackdropMode.Latest);
-		Scribe_Values.Look(ref backdropCustom, "backdropCustom", "");
-		Scribe_Values.Look(ref accentR, "accentR", 0.98f);
-		Scribe_Values.Look(ref accentG, "accentG", 0.74f);
-		Scribe_Values.Look(ref accentB, "accentB", 0.28f);
-		Scribe_Values.Look(ref panelOpacity, "panelOpacity", 1f);
-		Scribe_Values.Look(ref animations, "animations", true);
-		Scribe_Values.Look(ref menuDim, "menuDim", 1f);
-		Scribe_Values.Look(ref kenBurns, "kenBurns", true);
-		Scribe_Values.Look(ref menuUppercase, "menuUppercase", true);
+		Scribe_Values.Look(ref columns, "columns", Defaults.columns);
+		Scribe_Values.Look(ref cellSize, "cellSize", Defaults.cellSize);
+		Scribe_Values.Look(ref showInfoPanel, "showInfoPanel", Defaults.showInfoPanel);
+		Scribe_Values.Look(ref compactArchitect, "compactArchitect", Defaults.compactArchitect);
+		Scribe_Values.Look(ref dock, "dock", Defaults.dock);
+		Scribe_Values.Look(ref restyleWidgets, "restyleWidgets", Defaults.restyleWidgets);
+		Scribe_Values.Look(ref movableWindows, "movableWindows", Defaults.movableWindows);
+		Scribe_Values.Look(ref centerWindows, "centerWindows", Defaults.centerWindows);
+		Scribe_Values.Look(ref pinWindows, "pinWindows", Defaults.pinWindows);
+		Scribe_Values.Look(ref backdropMode, "backdropMode", Defaults.backdropMode);
+		Scribe_Values.Look(ref backdropCustom, "backdropCustom", Defaults.backdropCustom);
+		Scribe_Values.Look(ref accentR, "accentR", Defaults.accentR);
+		Scribe_Values.Look(ref accentG, "accentG", Defaults.accentG);
+		Scribe_Values.Look(ref accentB, "accentB", Defaults.accentB);
+		Scribe_Values.Look(ref panelOpacity, "panelOpacity", Defaults.panelOpacity);
+		Scribe_Values.Look(ref animations, "animations", Defaults.animations);
+		Scribe_Values.Look(ref menuDim, "menuDim", Defaults.menuDim);
+		Scribe_Values.Look(ref kenBurns, "kenBurns", Defaults.kenBurns);
+		Scribe_Values.Look(ref menuUppercase, "menuUppercase", Defaults.menuUppercase);
+		Scribe_Values.Look(ref cinematicMenu, "cinematicMenu", Defaults.cinematicMenu);
+		Scribe_Values.Look(ref menuContinue, "menuContinue", Defaults.menuContinue);
 	}
 
 	private static readonly (string name, Color color)[] Swatches =
@@ -131,6 +139,8 @@ public class LatticeSettings : ModSettings
 	private void DoMenu(Listing_Standard list)
 	{
 		Heading(list, "Main menu");
+		list.CheckboxLabeled("Cinematic main menu (off = vanilla layout; also off when vanilla restyling is off)", ref cinematicMenu);
+		list.CheckboxLabeled("'Continue' card with your latest save", ref menuContinue);
 		list.Label($"Shade behind the options: {menuDim * 100f:0}%");
 		menuDim = Mathf.Round(list.Slider(menuDim, 0f, 1f) * 20f) / 20f;
 		list.CheckboxLabeled("Slow zoom and drift on the background (Ken Burns)", ref kenBurns);
@@ -163,25 +173,10 @@ public class LatticeSettings : ModSettings
 
 	private void ResetAll()
 	{
-		columns = 8;
-		cellSize = 84f;
-		showInfoPanel = true;
-		compactArchitect = true;
-		dock = true;
-		restyleWidgets = true;
-		movableWindows = true;
-		centerWindows = true;
-		pinWindows = true;
-		backdropMode = BackdropMode.Latest;
-		backdropCustom = "";
-		accentR = 0.98f;
-		accentG = 0.74f;
-		accentB = 0.28f;
-		panelOpacity = 1f;
-		animations = true;
-		menuDim = 1f;
-		kenBurns = true;
-		menuUppercase = true;
+		foreach (FieldInfo f in typeof(LatticeSettings).GetFields(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
+		{
+			f.SetValue(this, f.GetValue(Defaults));
+		}
 	}
 
 	public void DoWindowContents(Rect inRect)
