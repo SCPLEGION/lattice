@@ -3,6 +3,7 @@
   <name>Lattice</name>
   <author>SCPLEGION</author>
   <packageId>scplegion.lattice</packageId>
+  <modVersion>1.0.0</modVersion>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>

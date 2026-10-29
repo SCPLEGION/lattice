@@ -14,7 +14,7 @@ namespace Lattice;
 // are the vanilla methods. The load-order list view stays available (toggle) for drag-reordering.
 public static class ModManager
 {
-	private enum Category { All, Enabled, Disabled, Favourites, Official, Workshop, Local, Issues }
+	private enum Category { All, Enabled, Disabled, Favourites, Official, Workshop, Local, Issues, Older }
 	private enum SortBy { Name, Status, Source, Version, Author, Size }
 	private enum VerMode { Any, Supports, Excludes, Below, AtLeast }
 	private enum GroupBy { None, Author, Version, Source, Tag }
@@ -88,6 +88,24 @@ public static class ModManager
 
 	private static int VKey(Version v) => v.Major * 1000 + Math.Max(v.Minor, 0);
 	private static string VLabel(int key) => (key / 1000) + "." + (key % 1000);
+	private static readonly Color OlderColor = new Color(0.45f, 0.78f, 1f);
+
+	// Not marked for this game version, but made for one of the last few minor versions of the same major
+	// (1.7 usually still loads 1.6 and 1.5 mods). How far back counts is a setting; 0 turns the state off.
+	private static bool Older(ModMetaData m)
+	{
+		int back = LatticeMod.Settings.olderVersionsBack;
+		if (back <= 0 || m.VersionCompatible || m.SupportedVersionsReadOnly == null)
+		{
+			return false;
+		}
+		int major = VersionControl.CurrentMajor, minor = VersionControl.CurrentMinor;
+		return m.SupportedVersionsReadOnly.Any(v => v.Major == major && v.Minor < minor && v.Minor >= minor - back);
+	}
+
+	// Really not made for this version: neither compatible nor recent enough to count as older.
+	private static bool Bad(ModMetaData m) => !m.VersionCompatible && !Older(m);
+
 	private static int TopVersion(ModMetaData m) => m.SupportedVersionsReadOnly != null && m.SupportedVersionsReadOnly.Count > 0 ? m.SupportedVersionsReadOnly.Max(VKey) : -1;
 	private static bool Filtering => verMode != VerMode.Any || compatibleOnly || conflictsOnly || missingDepsOnly || duplicatesOnly || tagFilter.Count > 0;
 
@@ -173,7 +191,7 @@ public static class ModManager
 		conflicts = new HashSet<ModMetaData>(all.Where(m => m.Active && m.IncompatibleWith != null
 			&& m.IncompatibleWith.Any(id => !id.NullOrEmpty() && !id.Equals(m.PackageIdNonUnique, StringComparison.OrdinalIgnoreCase) && activeIds.Contains(id))));
 		missingDeps = new HashSet<ModMetaData>(all.Where(m => m.Active && m.UnsatisfiedDependencies().Count > 0));
-		issues = new HashSet<ModMetaData>(all.Where(m => m.Active && !m.VersionCompatible).Concat(missingDeps).Concat(conflicts));
+		issues = new HashSet<ModMetaData>(all.Where(m => m.Active && Bad(m)).Concat(missingDeps).Concat(conflicts));
 		duplicates = new HashSet<ModMetaData>(all.GroupBy(m => m.PackageIdNonUnique, StringComparer.OrdinalIgnoreCase).Where(g => g.Count() > 1).SelectMany(g => g));
 		knownVersions = all.Where(m => m.SupportedVersionsReadOnly != null).SelectMany(m => m.SupportedVersionsReadOnly).Select(VKey).Distinct().OrderByDescending(k => k).ToList();
 		selection.RemoveWhere(m => !all.Contains(m));
@@ -190,14 +208,15 @@ public static class ModManager
 			case Category.Official: return m.Official;
 			case Category.Workshop: return m.Source == ContentSource.SteamWorkshop;
 			case Category.Local: return m.Source == ContentSource.ModsFolder;
-			case Category.Issues: return issues.Contains(m) || (!m.VersionCompatible && m.Active);
+			case Category.Issues: return issues.Contains(m);
+			case Category.Older: return Older(m);
 			default: return true;
 		}
 	}
 
 	private static bool PassesFilters(ModMetaData m)
 	{
-		if (compatibleOnly && !m.VersionCompatible)
+		if (compatibleOnly && Bad(m))
 		{
 			return false;
 		}
@@ -300,7 +319,7 @@ public static class ModManager
 		{
 			w.Add("Enabled mod lists it as incompatible: " + other.Name);
 		}
-		if (!mod.VersionCompatible)
+		if (Bad(mod))
 		{
 			w.Add("Not made for this game version");
 		}
@@ -739,8 +758,9 @@ public static class ModManager
 		if (!ModStore.LastVersion.NullOrEmpty() && ModStore.LastVersion != curLabel)
 		{
 			FlowBreak();
-			int bad = all.Count(m => m.Active && !m.VersionCompatible);
-			FlowLabel($"Game updated {ModStore.LastVersion} → {curLabel}: {bad} enabled mods are not marked compatible.");
+			int bad = all.Count(m => m.Active && Bad(m));
+			int older = all.Count(m => m.Active && Older(m));
+			FlowLabel($"Game updated {ModStore.LastVersion} → {curLabel}: {bad} enabled mods are not marked compatible" + (older > 0 ? $", {older} more are made for an older version." : "."));
 			if (Chip("Show them"))
 			{
 				category = Category.Issues;
@@ -1047,7 +1067,11 @@ public static class ModManager
 		{
 			s += "\nTags: " + tags;
 		}
-		if (!mod.VersionCompatible)
+		if (Older(mod))
+		{
+			s += "\n" + $"Made for {VLabel(TopVersion(mod))} - an older version that this game usually still loads".Colorize(OlderColor);
+		}
+		else if (!mod.VersionCompatible)
 		{
 			s += "\n" + "Not made for this game version".Colorize(ColorLibrary.RedReadable);
 		}
@@ -1084,9 +1108,10 @@ public static class ModManager
 		bool selected = Primary(page) == mod;
 		bool picked = selection.Contains(mod);
 		float h = UiStyle.Ease(UiStyle.Key(7301, card), hover ? 1f : 0f, 10f);
-		bool bad = !mod.VersionCompatible;
+		bool bad = Bad(mod);
+		bool older = Older(mod);
 		bool warn = issues.Contains(mod);
-		Color edge = bad ? ColorLibrary.RedReadable : warn ? new Color(1f, 0.75f, 0.2f) : mod.Active ? UiStyle.Accent : UiStyle.Hairline;
+		Color edge = bad ? ColorLibrary.RedReadable : warn ? new Color(1f, 0.75f, 0.2f) : older ? OlderColor : mod.Active ? UiStyle.Accent : UiStyle.Hairline;
 
 		UiStyle.DrawGradient(card, UiStyle.WithAlpha(UiStyle.PanelTop, 0.75f + 0.25f * h), UiStyle.WithAlpha(UiStyle.PanelBottom, 0.85f));
 		if (selected)
@@ -1097,7 +1122,7 @@ public static class ModManager
 		{
 			Widgets.DrawBoxSolidWithOutline(card, UiStyle.WithAlpha(SelectColor, 0.1f), SelectColor, 2);
 		}
-		Widgets.DrawBoxSolid(new Rect(card.x, card.y, card.width, 3f), UiStyle.WithAlpha(edge, mod.Active || bad || warn ? 1f : 0.5f));
+		Widgets.DrawBoxSolid(new Rect(card.x, card.y, card.width, 3f), UiStyle.WithAlpha(edge, mod.Active || bad || warn || older ? 1f : 0.5f));
 
 		Rect preview = new Rect(card.x + 4f, card.y + 7f, card.width - 8f, card.height * 0.585f);
 		Texture tex = mod.PreviewImage ?? mod.Icon;
@@ -1126,11 +1151,25 @@ public static class ModManager
 		GUI.color = Color.white;
 		Text.Font = GameFont.Small;
 
+		float badgeY = preview.y + 28f;
 		if (duplicates.Contains(mod))
 		{
 			Text.Font = GameFont.Tiny;
 			GUI.color = new Color(1f, 0.75f, 0.2f);
-			Widgets.Label(new Rect(preview.x + 6f, preview.y + 28f, 60f, 18f), "dup");
+			Widgets.Label(new Rect(preview.x + 6f, badgeY, 60f, 18f), "dup");
+			GUI.color = Color.white;
+			Text.Font = GameFont.Small;
+			badgeY += 16f;
+		}
+		if (older)
+		{
+			Text.Font = GameFont.Tiny;
+			Rect badge = new Rect(preview.x + 6f, badgeY, 54f, 16f);
+			Widgets.DrawBoxSolid(badge, new Color(0f, 0f, 0f, 0.6f));
+			GUI.color = OlderColor;
+			Text.Anchor = TextAnchor.MiddleCenter;
+			Widgets.Label(badge, "for " + VLabel(TopVersion(mod)));
+			Text.Anchor = TextAnchor.UpperLeft;
 			GUI.color = Color.white;
 			Text.Font = GameFont.Small;
 		}
@@ -1160,9 +1199,10 @@ public static class ModManager
 		bool hover = Mouse.IsOver(row);
 		bool selected = Primary(page) == mod;
 		bool picked = selection.Contains(mod);
-		bool bad = !mod.VersionCompatible;
+		bool bad = Bad(mod);
+		bool older = Older(mod);
 		bool warn = issues.Contains(mod);
-		Color edge = bad ? ColorLibrary.RedReadable : warn ? new Color(1f, 0.75f, 0.2f) : mod.Active ? UiStyle.Accent : UiStyle.Hairline;
+		Color edge = bad ? ColorLibrary.RedReadable : warn ? new Color(1f, 0.75f, 0.2f) : older ? OlderColor : mod.Active ? UiStyle.Accent : UiStyle.Hairline;
 		Widgets.DrawBoxSolid(row, new Color(1f, 1f, 1f, hover ? 0.1f : 0.04f));
 		if (picked)
 		{
@@ -1190,7 +1230,9 @@ public static class ModManager
 		Widgets.Label(new Rect(right - 70f, row.y, 70f, row.height), ModStore.FormatSize(ModStore.SizeOf(mod)));
 		right -= 76f;
 		int top = TopVersion(mod);
+		GUI.color = older ? OlderColor : bad ? ColorLibrary.RedReadable : UiStyle.TextDim;
 		Widgets.Label(new Rect(right - 50f, row.y, 50f, row.height), top < 0 ? "" : VLabel(top));
+		GUI.color = UiStyle.TextDim;
 		right -= 56f;
 		float authorW = Mathf.Min(170f, row.width * 0.25f);
 		Text.Anchor = TextAnchor.MiddleLeft;

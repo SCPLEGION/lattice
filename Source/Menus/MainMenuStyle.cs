@@ -399,7 +399,7 @@ public static class MainMenuStyle
 
 		// Version (and Steam name) under it, replacing vanilla's block in the top-left corner.
 		Text.Font = GameFont.Tiny;
-		string version = "VersionIndicator".Translate(VersionControl.CurrentVersionString);
+		string version = "VersionIndicator".Translate(VersionControl.CurrentVersionString) + "  ·  Lattice " + LatticeMod.Version;
 		if (SteamManager.Initialized)
 		{
 			version += "  ·  " + SteamUtility.SteamPersonaName;
